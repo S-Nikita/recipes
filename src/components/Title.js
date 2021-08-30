@@ -2,9 +2,7 @@ import React from 'react'
 
 const Title = ({title}) => {
     return (
-        <div className="section-title">
-            <h2>{title || "missing title"}</h2>
-        </div>
+        <h2>{title || "missing title"}</h2>
     )
 }
 

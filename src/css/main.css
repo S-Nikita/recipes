@@ -1,23 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,400,700&display=swap");
 :root {
-    /*darkest grey for headings*/
-    --clr-grey-1: hsl(209, 61%, 16%);
-    --clr-grey-3: hsl(209, 34%, 30%);
-    --clr-grey-4: hsl(209, 28%, 39%);
-    /* grey used for paragraphs */
-    --clr-grey-5: hsl(210, 22%, 49%);
-    --clr-grey-8: hsl(210, 31%, 80%);
-    --clr-grey-9: hsl(212, 33%, 89%);
-    --clr-grey-10: hsl(210, 36%, 96%);
-    --clr-white: #fff;
-    --ff-primary: "Roboto", sans-serif;
-    --ff-secondary: "Open Sans", sans-serif;
-    --transition: all 0.3s linear;
-    --spacing: 0.2rem;
-    --radius: 0.25rem;
-    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    --max-width: 120rem;
+  /*darkest grey for headings*/
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.2rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 120rem;
 }
 
 /*
@@ -95,42 +95,42 @@ Navbar
 }
 
 .nav-center {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    width: 90vw;
-    max-width: var(--max-width);
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .nav-links a {
-    text-decoration: none;
-    text-transform: capitalize;
-    color: var(--clr-grey-1);
-    margin-right: 3.75rem;
-    letter-spacing: 0.05em;
-    font-weight: 300;
-    font-size: 1.5rem;
-    font-family: var(--ff-primary);
-    transition: var(--transition);
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--clr-grey-1);
+  margin-right: 3.75rem;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-family: var(--ff-primary);
+  transition: var(--transition);
 }
 
 .nav-links a:hover {
-    color: #FF5364;
-    box-shadow: 0px 2px var(#FF5364);
+  color: #ff5364;
+  box-shadow: 0px 2px var(#ff5364);
 }
 
 /*
@@ -139,91 +139,90 @@ Hero
 =============== 
 */
 .hero {
-    margin-top: -5rem;
-    padding-top: 8rem;
-    min-height: 100vh;
-    position: relative;
-    background: linear-gradient(90deg, #FFA585 0%, rgba(255, 237, 160, 0.7) 100%);
-    display: grid;
-    grid-template-columns: 5% 1fr 1fr 5%;
+  margin-top: -5rem;
+  padding-top: 8rem;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(90deg, #ffa585 0%, rgba(255, 237, 160, 0.7) 100%);
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 5%;
 }
 
 .hero-main {
-    grid-column: 2/3;
+  grid-column: 2/3;
 }
 
 .hero-main h1 {
-    margin-top: 12.625rem;
+  margin-top: 12.625rem;
 }
 
 .hero-main p {
-    display: block;
-    width: 35rem;
-    height: 7.125rem;
-    margin-top: 2.625rem;
-    font-size: 1.1rem;
-    font-weight: 400;
+  display: block;
+  width: 35rem;
+  height: 7.125rem;
+  margin-top: 2.625rem;
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
 .btn {
-    display: inline-block;
-    margin-top: 9.5rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    background-color: #FF5364;
-    color: #FFF;
-    font-size: 1.2rem;
-    font-weight: 400;
-    letter-spacing: 0.05rem;
-    padding: 1rem 3.5rem;
-    border: 2px solid transparent;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: var(--radius);
-    transition: var(--transition);
+  display: inline-block;
+  margin-top: 9.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #ff5364;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  padding: 1rem 3.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  transition: var(--transition);
 }
 
 .btn:hover {
-    color: var(--clr-grey-3);
-    background-color: #FF4A5C;
-    transform: translate(0, -2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  color: var(--clr-grey-3);
+  background-color: #ff4a5c;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero_images {
-    overflow: hidden;
-    transition: all 3s ease-out;
-    cursor: pointer;
-    width: 32rem;
-    height: 32rem;
-    justify-self: center;
-    align-self: center;
-    margin-right: -4.75rem;
+  overflow: hidden;
+  transition: all 3s ease-out;
+  cursor: pointer;
+  width: 32rem;
+  height: 32rem;
+  justify-self: center;
+  align-self: center;
+  margin-right: -4.75rem;
 }
 .hero_images:hover .img_left {
-    transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
 }
 
 .hero_images:hover .img_right {
-    transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
 }
 
 .img_left {
-    position: absolute;
-    top: 17.5rem;
-    left: 69.7rem;
-    width: 21.875rem;
-    height: 31.375rem;
-    transform: translate(0%, -5%);
+  position: absolute;
+  top: 17.5rem;
+  left: 69.7rem;
+  width: 21.875rem;
+  height: 31.375rem;
+  transform: translate(0%, -5%);
 }
 
 .img_right {
-    position: absolute;
-    left: 88.9rem;
-    top: 13.5rem;
-    width: 15.75rem;
-    height: 39.5625rem;
-    transform: translate(0%, 5%);
+  position: absolute;
+  left: 88.9rem;
+  top: 13.5rem;
+  width: 15.75rem;
+  height: 39.5625rem;
+  transform: translate(0%, 5%);
 }
 
 /*
@@ -232,63 +231,63 @@ Project
 =============== 
 */
 .project {
-    margin: 0;
-    background-color: #F1F1F1;
-    height: 54.125rem;
+  margin: 0;
+  background-color: #f1f1f1;
+  height: 54.125rem;
 }
 
 .project-body {
-    display: grid;
-    grid-template-columns:5% repeat(12, 1fr) 5%;
-    padding-top: 8rem;
+  display: grid;
+  grid-template-columns: 5% repeat(12, 1fr) 5%;
+  padding-top: 8rem;
 }
-    
+
 .shape {
-    display: inline-block;
-    border: solid 5px #FF5364;
-    width: 26rem;
-    height: 35rem;
-    border-radius: var(--radius);
-    grid-column-start: 2;
-    position: absolute;
-    z-index: 1;
-    top: 68rem;
-    left: 6.25rem;
+  display: inline-block;
+  border: solid 5px #ff5364;
+  width: 26rem;
+  height: 35rem;
+  border-radius: var(--radius);
+  grid-column-start: 2;
+  position: absolute;
+  z-index: 1;
+  top: 68rem;
+  left: 6.25rem;
 }
 
 .picture {
-    grid-column: 2/5;
+  grid-column: 2/5;
 }
 
 .about-img {
-    position: relative;
-    display: inline-block;
-    width: 26rem;
-    height: 35rem;
-    padding-top: -24rem;
-    margin-left: 2rem;
-    z-index: 300;
+  position: relative;
+  display: inline-block;
+  width: 26rem;
+  height: 35rem;
+  padding-top: -24rem;
+  margin-left: 2rem;
+  z-index: 300;
 }
 
 .project-description {
-    grid-column: 7/13;
+  grid-column: 7/13;
 }
 
 .project-description h2 {
-    font-size: 3rem;
-    font-weight: 300;
-    color: #FF5364;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #ff5364;
 }
 
 .project-description p {
-    display: inline-block;
-    width: 53.125rem;
-    height: 17rem;
-    margin-top: 3.75rem;
+  display: inline-block;
+  width: 53.125rem;
+  height: 17rem;
+  margin-top: 3.75rem;
 }
 
 .project-description .btn {
-    margin-top: 7.8rem;
+  margin-top: 7.8rem;
 }
 
 /*
@@ -297,60 +296,303 @@ Category
 =============== 
 */
 .category {
-    display: grid;
-    grid-template-columns: 5% repeat(12, 1fr) 5%;
+  display: grid;
+  grid-template-columns: 5% repeat(12, 1fr) 5%;
 }
 
 .category h2 {
-    display: inline-block;
-    grid-column: 7/9;
-    justify-self: center;
-    margin-top: 4rem;
-    font-size: 3rem;
-    font-weight: 300;
-    color: #FF5364;
+  display: inline-block;
+  grid-column: 7/9;
+  justify-self: center;
+  margin-top: 4rem;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #ff5364;
 }
 
 .category_images {
-    display: flex;
-    grid-column-start: 3;
-    grid-column-end: 13;
-    justify-content: space-between;
-    margin-top: 6rem;
+  display: flex;
+  grid-column-start: 3;
+  grid-column-end: 13;
+  justify-content: space-between;
+  margin-top: 6rem;
 }
 
 .category_img {
-    text-align: center;
+  text-align: center;
 }
 
 .circle {
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    margin-bottom: -22.9rem;
-    display: inline-block;
-    height: 22.5rem;
-    width: 22.5rem;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    transition: all 1s;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -22.9rem;
+  display: inline-block;
+  height: 22.5rem;
+  width: 22.5rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
 }
 
 .circle:hover {
-    opacity: 1;
+  opacity: 0;
 }
 
 .category_img p {
-    margin-top: 1.7rem;
-    padding-bottom: 7.5rem;
-    font-weight: 300;
-    font-size: 1.875rem;
+  margin-top: 1.7rem;
+  padding-bottom: 7.5rem;
+  font-weight: 300;
+  font-size: 1.875rem;
 }
 
 .category_images img {
-    display: inline-block;
-    width: 22.5rem;
-    height: 22.5rem;
+  display: inline-block;
+  width: 22.5rem;
+  height: 22.5rem;
 }
 
+/*
+=============== 
+Last recipes
+=============== 
+*/
+.last_recipes {
+  background-color: #f1f1f1;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 5% repeat(12, 1fr) 5%;
+}
+
+.last_recipes h2 {
+  grid-column: 1 / 15;
+  justify-self: center;
+  display: inline-block;
+  margin-top: 4rem;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #ff5364;
+}
+
+.recipes-center {
+  display: flex;
+  grid-column-start: 2;
+  grid-column-end: 14;
+  justify-content: space-between;
+}
+
+.btn-last_recipes {
+  grid-column: 1 / 15;
+  justify-self: center;
+  margin-top: 8.5rem;
+  margin-bottom: 6rem;
+}
+/*
+=============== 
+Recipe Card
+=============== 
+*/
+.recipe-card__cover {
+  margin-top: 6rem;
+  display: flex;
+  position: relative;
+  border-radius: 1rem;
+  height: 35rem;
+  width: 25rem;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 30;
+  transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card__cover {
+  margin-top: 6rem;
+  display: flex;
+  position: relative;
+  border-radius: 1rem;
+  height: 32.5rem;
+  width: 22.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 30;
+  transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card__cover-details {
+  overflow: hidden;
+  color: var(--clr-white);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 20;
+}
+
+.recipe-card__img {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 10;
+  transition: all 0.3s ease-in;
+}
+
+.recipe-card__img img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-position: center;
+}
+
+.recipe-card__cover:hover .recipe-card__cover-details {
+  background: rgba(83, 186, 255, 0.4);
+}
+
+.recipe-card__cover:hover .recipe-card__img {
+  transform: scale(1.1);
+}
+
+.recipe-card_category {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  color: rgba(224, 227, 229, 1);
+  transition: transform 0.3s ease-in;
+  transform: translateY(-280%);
+}
+
+.recipe-card_category span {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 94, 110, 1);
+  border-radius: var(--radius);
+  margin-right: 1rem;
+  background-color: rgba(255, 94, 110, 1);
+}
+
+.recipe-card__cover:hover .recipe-card_category {
+  transform: translate(0);
+}
+
+.recipe-card_title {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 75%;
+  position: absolute;
+  left: 1.5rem;
+  bottom: 5.5rem;
+  transform: translateY(3rem);
+  transition: all 0.3s ease-in;
+}
+
+.recipe-card_title h3 {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-weight: 300;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
+}
+
+.recipe-card__cover:hover .recipe-card_title {
+  transform: translate(0);
+}
+
+.recipe-card__cover:hover .recipe-card_title h3 {
+  /* color: rgba(255, 94, 110, 1); */
+  /* color: var(--clr-grey-1); */
+}
+
+.recipe-card_nutrition {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0 5%;
+  transform: translateY(4rem);
+  transition: transform 0.3s ease-in;
+}
+
+.recipe-card_nutrition svg {
+  align-self: center;
+}
+
+.recipe-card__cover:hover .recipe-card_nutrition {
+  transform: translate(0);
+}
+
+.recipe-card_nutrition--calories {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1rem;
+  border-right: 1px solid #fff;
+}
+
+.recipe-card_nutrition--calories p {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 300;
+  display: inline-block;
+  padding: 0 1rem 0 0.75rem;
+  line-height: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.recipe-card_nutrition--time {
+  display: flex;
+  flex-direction: row;
+  border-right: 1px solid #fff;
+  margin-right: 1rem;
+}
+
+.recipe-card_nutrition--time p {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 300;
+  display: inline-block;
+  padding: 0 1rem 0 0.75rem;
+  align-self: center;
+  text-align: center;
+}
+
+.recipe-card_nutrition--difficulty {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+}
+
+/* *** FOOTER *** */
+footer {
+  height: 10rem;
+  background: #222;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+footer h4 {
+  margin-top: 1rem;
+  color: var(--clr-white);
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+footer h4 span {
+  color: #ff5364;
+}
+
+.social-link {
+  margin-right: 1.5rem;
+}
+
+.social-link path {
+  transition: all 0.3s ease-in-out;
+}
+
+.social-link:hover path {
+  fill: #ff5364;
+}

@@ -11,7 +11,7 @@ const Recipes = ({recipes, title, showLink}) => {
                     return <Recipe key={recipe.id} {...recipe} />
                 })}
             </div>
-            {showLink && <Link to="/recipes" className="btn center-btn">Все рецепты</Link>}
+            {showLink && <Link to="/recipes" className="btn btn-last_recipes">Все рецепты</Link>}
         </section>
     )
 }
