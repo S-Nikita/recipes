@@ -12,7 +12,7 @@ const Recipe = ({
     slug,
     category_item
 }) => {
-    let {localFile:image} = picture
+    let { localFile: image } = picture
     return (
         <div className="recipe-card__cover">
             <div className="recipe-card__img">
@@ -25,21 +25,21 @@ const Recipe = ({
                     })}
                 </div>
                 <div className="recipe-card_title">
-                        <h3>{title}</h3>
+                    <h3>{title}</h3>
                 </div>
                 <div className="recipe-card_nutrition">
                     <div className="recipe-card_nutrition--calories">
-                        <Fire stroke="white" height="1.5rem" width="1.5rem" />
+                        <Fire height="1.5rem" width="1.5rem" />
                         <p>{calories_100}<br />кКал</p>
                     </div>
                     <div className="recipe-card_nutrition--time">
-                        <Time stroke="white" height="1.5rem" width="1.5rem" />
+                        <Time height="1.5rem" width="1.5rem" />
                         <p>{time} мин</p>
                     </div>
                     <div className="recipe-card_nutrition--difficulty">
-                        <Fork stroke={`${difficulty >= 1 ? '#FF5364' : 'white'}`}  height="1.5rem" width="1.5rem" />
-                        <Fork stroke={`${difficulty >= 2 ? '#FF5364' : 'white'}`}  height="1.5rem" width="1.5rem" />
-                        <Fork stroke={`${difficulty === 3 ? '#FF5364' : 'white'}`}  height="1.5rem" width="1.5rem" />
+                        <Fork className={`${difficulty >= 1 ? 'svg_color' : ''}`} height="1.5rem" width="1.5rem" />
+                        <Fork className={`${difficulty >= 2 ? 'svg_color' : ''}`} height="1.5rem" width="1.5rem" />
+                        <Fork className={`${difficulty === 3 ? 'svg_color' : ''}`} height="1.5rem" width="1.5rem" />
                     </div>
                 </div>
             </div>

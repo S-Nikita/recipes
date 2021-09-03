@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from "react";
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Fire from '../../assets/fire.svg'
@@ -8,6 +9,34 @@ import Fork from '../../assets/fork.svg'
 const RecipeTemplate = ({ pageContext: { title }, data }) => {
     const { strapiRecipe: recipe } = data
     let { localFile: image } = recipe.picture
+
+    const [checkedState, setCheckedState] = useState(
+        new Array(recipe.ingridient_item.length).fill(false)
+    )
+
+    const handleOnChange = (position) => {
+        const updatedCheckedState = checkedState.map((item, index) => (
+            index === position ? !item : item
+        ))
+        setCheckedState(updatedCheckedState);
+    }
+    // sort direction_items
+    function compare(a, b) {
+        if (a.id < b.id) {
+            return -1
+        }
+
+        if (a.id > b.id) {
+            return 1
+        }
+
+        return 0
+    }
+    recipe.direction_item.sort(compare)
+
+    // sort ingridient_items
+    recipe.ingridient_item.sort(compare)
+    console.log(recipe.author)
     return (
         <>
             <main className="strapi-recipe">
@@ -15,81 +44,115 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
                 <div className="recipe-img">
                     <GatsbyImage image={getImage(image)} alt={title} />
                 </div>
-                <div className="recipe-card_nutrition">
-                    <div className="recipe-card_nutrition--calories">
-                        <Fire stroke="white" height="1.5rem" width="1.5rem" />
-                        <p>{recipe.calories_100}<br />кКал</p>
+                <div className="recipe-card_nutrition--strapi">
+                    <div className="recipe-card_nutrition--calories--strapi">
+                        <Fire height="2rem" width="2rem" />
+                        <p>{recipe.calories_100} кКал</p>
                     </div>
-                    <div className="recipe-card_nutrition--time">
-                        <Time stroke="white" height="1.5rem" width="1.5rem" />
+                    <div className="recipe-card_nutrition--time--strapi">
+                        <Time height="2rem" width="2rem" />
                         <p>{recipe.time} мин</p>
                     </div>
-                    <div className="recipe-card_nutrition--difficulty">
-                        <Fork stroke={`${recipe.difficulty >= 1 ? '#FF5364' : 'white'}`} height="1.5rem" width="1.5rem" />
-                        <Fork stroke={`${recipe.difficulty >= 2 ? '#FF5364' : 'white'}`} height="1.5rem" width="1.5rem" />
-                        <Fork stroke={`${recipe.difficulty === 3 ? '#FF5364' : 'white'}`} height="1.5rem" width="1.5rem" />
+                    <div className="recipe-card_nutrition--difficulty--strapi">
+                        <p>Сложность:</p>
+                        <Fork className={`${recipe.difficulty >= 1 ? 'svg_color' : ''}`} height="2rem" width="2rem" />
+                        <Fork className={`${recipe.difficulty >= 2 ? 'svg_color' : ''}`} height="2rem" width="2rem" />
+                        <Fork className={`${recipe.difficulty === 3 ? 'svg_color' : ''}`} height="2rem" width="2rem" />
                     </div>
                 </div>
-                <div className="strapi-recipe_description">
-                    <h3>Описание</h3>
-                    <p>{recipe.description}</p>
-                </div>
-                <div className="strapi-recipe_nutrition">
-                    <h3>Питательная ценность</h3>
-                    <div className="strapi-recipe_nutrition--table">
-                        <div className="portion">
-                            <h4>На порцию</h4>
-                            <ul className="portion_ul-text">
-                                <li className="li_text">Белки, г:</li>
-                                <li className="li_text">Жиры, г:</li>
-                                <li className="li_text">Углеводы, г:</li>
-                                <li className="li_text">Калории, кКал:</li>
-                            </ul>
-                            <ul className="portion_ul-numbers">
-                                <li className="li_numbers">{recipe.protein_portion}</li>
-                                <li className="li_numbers">{recipe.fat_portion}</li>
-                                <li className="li_numbers">{recipe.carbs_portion}</li>
-                                <li className="li_numbers">{recipe.calories_portion}</li>
-                            </ul>
-                        </div>
-                        <div className="standart_calories">
-                            <h4>На 100 г продукта</h4>
-                            <ul className="portion_ul-text">
-                                <li className="li_text">Белки, г:</li>
-                                <li className="li_text">Жиры, г:</li>
-                                <li className="li_text">Углеводы, г:</li>
-                                <li className="li_text">Калории, кКал:</li>
-                            </ul>
-                            <ul className="portion_ul-numbers">
-                                <li className="li_numbers">{recipe.protein_100}</li>
-                                <li className="li_numbers">{recipe.fat_100}</li>
-                                <li className="li_numbers">{recipe.carbs_100}</li>
-                                <li className="li_numbers">{recipe.calories_100}</li>
-                            </ul>
+                <div className="strapi-recipe_main-description">
+                    <div className="strapi-recipe_description">
+                        <h3>Описание</h3>
+                        <div className="recipe_desc_strapi">
+                            <p>
+                                {recipe.author && recipe.author_link ? 'Автор рецепта ' : ''}
+                                {recipe.author && recipe.author_link ? <a href={recipe.author_link} target="_blank">{recipe.author}</a> : ''}
+                                {recipe.author && recipe.author_link ? <br></br> : ''}
+                                {recipe.author && recipe.author_link ? <br></br> : ''}
+                                {recipe.description}
+                                {recipe.link ? <br></br> : ''}
+                                {recipe.link ? <br></br> : ''}
+                                {recipe.link ? 'Видео ' : ''}
+                                {recipe.link ? <a href={recipe.link} target="_blank">инструкция</a> : ''}
+                            </p>
                         </div>
                     </div>
+                    <div className="strapi-recipe_nutrition">
+                        <h3>Питательная ценность</h3>
+                        <div className="strapi-recipe_nutrition--table">
+                            <div className="portion">
+                                <h4 className="portion_heading">На порцию</h4>
+                                <div className="portion_ul">
+                                    <ul className="portion_ul-text">
+                                        <li className="li_text">Белки, г:</li>
+                                        <li className="li_text">Жиры, г:</li>
+                                        <li className="li_text">Углеводы, г:</li>
+                                        <li className="li_text">Калории, кКал:</li>
+                                    </ul>
+                                    <ul className="portion_ul-numbers">
+                                        <li className="li_numbers">{recipe.protein_portion}</li>
+                                        <li className="li_numbers">{recipe.fat_portion}</li>
+                                        <li className="li_numbers">{recipe.carbs_portion}</li>
+                                        <li className="li_numbers">{recipe.calories_portion}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="vl"></div>
+                            <div className="standart_calories">
+                                <h4 className="portion_heading_100">На 100г</h4>
+                                <div className="standart_calories_ul">
+                                    <ul className="portion_ul-text">
+                                        <li className="li_text">Белки, г:</li>
+                                        <li className="li_text">Жиры, г:</li>
+                                        <li className="li_text">Углеводы, г:</li>
+                                        <li className="li_text">Калории, кКал:</li>
+                                    </ul>
+                                    <ul className="portion_ul-numbers">
+                                        <li className="li_numbers">{recipe.protein_100}</li>
+                                        <li className="li_numbers">{recipe.fat_100}</li>
+                                        <li className="li_numbers">{recipe.carbs_100}</li>
+                                        <li className="li_numbers">{recipe.calories_100}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="strapi-recipe_preparation">
-                    <div className="ingridients">
-                        <h3>Ингридиенты</h3>
-                        <ul className="ingridients_list">
-                            {recipe.ingridient_item.map(ingridient => {
-                                return (
-                                    <li className="ingridient_item" key={ingridient.id}>{ingridient.ingridients_item}</li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <div className="directions">
-                        <h3>Инструкция</h3>
-                        <ul className="ingridients_list">
-                            {recipe.direction_item.map(direction => {
-                                return (
-                                    <li className="direction_item" key={direction.id}>{direction.direction_item}</li>
-                                )
-                            })}
-                        </ul>
-                    </div>
+                <div className="ingridients">
+                    <h3 className="strapi_recipe_h3">Ингридиенты</h3>
+                    <ul className="ingridients_list">
+                        {recipe.ingridient_item.map((ingridient, index) => {
+                            return (
+                                <li className="ingridient_item" key={ingridient.id}>
+                                    <input type="checkbox"
+                                        id={`custom-checkbox-${ingridient.id}`}
+                                        name={ingridient.ingridients_item}
+                                        value={ingridient.ingridients_item}
+                                        checked={checkedState[index]}
+                                        onChange={() => handleOnChange(index)}
+                                    />
+                                    <label htmlFor={`custom-checkbox-${ingridient.id}`}
+                                        className={`${checkedState[index] ? 'checked ' : ''}checkbox_ingridients`}>
+                                        {ingridient.ingridients_item}
+                                        <span className="checkmark"></span>
+                                    </label>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+                <div className="directions">
+                    <h3 className="strapi_recipe_h3">Процесс приготовления</h3>
+                    <ul className="directions_list">
+                        {recipe.direction_item.map(direction => {
+                            return (
+                                <li className="direction_item" key={direction.id}>
+                                    <span className="circle_number">{direction.id}</span>
+                                    <p>{direction.direction_item}</p>
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </div>
             </main>
         </>
@@ -99,6 +162,8 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
 export const query = graphql`
     query getSingleRecipe($title: String) {
     strapiRecipe(title: {eq: $title}) {
+        author
+        author_link
         title
         calories_100
         calories_portion
@@ -108,6 +173,7 @@ export const query = graphql`
         fat_portion
         description
         difficulty
+        link
         protein_100
         protein_portion
         time

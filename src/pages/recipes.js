@@ -3,15 +3,15 @@ import { graphql } from "gatsby"
 import Recipe from "../components/Recipe"
 
 const RecipesPage = () => {
-    return (
-        <>
-            <main>
-                <section className="recipes-page">
-                    <Recipe />
-                </section>
-            </main>
-        </>
-    )
+  return (
+    <>
+      <main>
+        <section className="recipes-page">
+          <Recipe />
+        </section>
+      </main>
+    </>
+  )
 }
 
 export const query = graphql`
@@ -55,5 +55,4 @@ export const query = graphql`
     }
   }
 `
-
 export default RecipesPage

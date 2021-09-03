@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,400,500&display=swap");
 :root {
   /*darkest grey for headings*/
   --clr-grey-1: hsl(209, 61%, 16%);
@@ -38,7 +38,7 @@ body {
   background: var(--clr-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
-  font-size: 0.875rem;
+  font-size: 1rem;
   margin-top: 5rem;
 }
 ul {
@@ -53,8 +53,8 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
+  /* line-height: 1.25; */
+  /* margin-bottom: 0.75rem; */
   font-family: var(--ff-primary);
 }
 h1 {
@@ -77,6 +77,17 @@ p {
   color: var(--clr-grey-3);
 }
 
+p::selection,
+a::selection,
+span::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection {
+  color: #fff;
+  background: #ff5364;
+}
+
 /*
 =============== 
 Navbar
@@ -87,7 +98,7 @@ Navbar
   top: 0;
   left: 0;
   width: 100%;
-  height: 8rem;
+  height: 6rem;
   display: flex;
   align-items: center;
   background: transparent;
@@ -530,6 +541,10 @@ Recipe Card
   border-right: 1px solid #fff;
 }
 
+.recipe-card_nutrition--calories svg path {
+  fill: var(--clr-white);
+}
+
 .recipe-card_nutrition--calories p {
   color: #fff;
   font-size: 0.875rem;
@@ -546,6 +561,10 @@ Recipe Card
   flex-direction: row;
   border-right: 1px solid #fff;
   margin-right: 1rem;
+}
+
+.recipe-card_nutrition--time svg path {
+  fill: var(--clr-white);
 }
 
 .recipe-card_nutrition--time p {
@@ -595,4 +614,370 @@ footer h4 span {
 
 .social-link:hover path {
   fill: #ff5364;
+}
+
+/* SINGLE RECIPE PAGE */
+.strapi-recipe {
+  margin-top: 6rem;
+  display: grid;
+  background: #f1f5f8;
+  grid-template-columns: 4.17% repeat(12, 1fr) 4.17%;
+  grid-column-gap: 1.25rem;
+}
+
+.strapi-recipe h2 {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  grid-column: 6/10;
+  justify-self: center;
+  color: #102a42;
+  font-weight: 400;
+  font-size: 3rem;
+  margin: 8rem 0;
+}
+
+.recipe-img {
+  display: block;
+  grid-column: 3/7;
+  width: 33rem;
+  height: 41.25rem;
+}
+
+.recipe-img img {
+  width: 33rem;
+  height: 41.25rem;
+  border-radius: var(--radius);
+}
+
+.recipe-card_nutrition--strapi {
+  grid-column: 3/7;
+  height: 3.5rem;
+  width: 33rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.recipe-card_nutrition--calories--strapi {
+  max-width: 30%;
+  display: flex;
+  flex-direction: row;
+  border-right: 1px solid #000;
+  margin-right: 1rem;
+}
+
+.recipe-card_nutrition--calories--strapi p {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 300;
+  display: inline-block;
+  padding: 0 1rem 0 0.75rem;
+  align-self: center;
+  text-align: center;
+}
+
+.recipe-card_nutrition--time--strapi {
+  max-width: 30%;
+  display: flex;
+  flex-direction: row;
+  border-right: 1px solid #000;
+  margin-right: 1rem;
+}
+
+.recipe-card_nutrition--time--strapi p {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 300;
+  display: inline-block;
+  padding: 0 1rem 0 0.75rem;
+  align-self: center;
+  text-align: center;
+}
+
+.recipe-card_nutrition--difficulty--strapi {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe-card_nutrition--difficulty--strapi p {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 300;
+  display: inline-block;
+  padding-right: 1rem;
+  align-self: center;
+  text-align: center;
+}
+
+.recipe-card_nutrition--difficulty--strapi svg:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+/* Color svg based on difficulty level */
+.svg_color path {
+  fill: #ff5364;
+}
+
+.strapi-recipe_main-description {
+  display: grid;
+  grid-column: 8/12;
+  grid-row: 2;
+}
+
+.strapi-recipe_main-description h3 {
+  padding: 0;
+  margin: 0;
+  color: #444;
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  letter-spacing: 0.1rem;
+}
+
+.recipe_desc_strapi {
+  width: 40.625rem;
+  max-height: 19.3125rem;
+  border: solid 1px #000;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.8);
+  margin-top: 2rem;
+}
+
+.recipe_desc_strapi p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  display: inline-block;
+  max-width: 35rem;
+  max-height: 17rem;
+  margin: 1.5rem 2.8125rem;
+  text-align: left;
+}
+
+.recipe_desc_strapi br {
+  display: block; /* makes it have a width */
+  content: ""; /* clears default height */
+  margin: 0; /* change this to whatever height you want it */
+  padding: 0;
+  line-height: 0.3rem;
+}
+
+.recipe_desc_strapi a {
+  text-decoration: none;
+  color: #ff5364;
+}
+
+.instruction_link {
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.strapi-recipe_nutrition {
+  align-self: end;
+}
+
+.strapi-recipe_nutrition--table {
+  position: relative;
+  display: block;
+  margin-top: 2rem;
+  width: 40.625rem;
+  height: 10.375rem;
+  border: solid 1px #444;
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.portion {
+  float: left;
+  width: 14.2rem;
+  height: 8.5rem;
+  margin-left: 2.5rem;
+  margin-top: 1rem;
+}
+
+.strapi-recipe_nutrition--table h4 {
+  display: inline-block;
+  padding: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.strapi-recipe_nutrition--table li {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.portion_heading {
+  font-size: 1.125rem;
+  font-weight: 400;
+  width: 14.2rem;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.portion_heading_100 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  width: 14.875rem;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.portion_ul-text {
+  float: left;
+}
+
+.portion_ul-numbers {
+  float: right;
+  text-align: right;
+}
+
+.standart_calories {
+  float: right;
+  width: 14.875rem;
+  height: 8.5rem;
+  margin-right: 2.5rem;
+  margin-top: 1rem;
+}
+
+.vl {
+  display: inline-block;
+  position: absolute;
+  top: 0.5rem;
+  left: 20.312rem;
+  border-right: solid 1px #444;
+  height: 9.375rem;
+}
+/* Ingridients styling */
+.ingridients {
+  width: 33rem;
+  grid-column: 3/6;
+  margin-top: 5rem;
+  margin-bottom: 8rem;
+}
+
+.strapi_recipe_h3 {
+  color: #444;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Checkbox styling */
+.ingridient_item {
+  position: relative;
+  margin: 2rem 0 1rem 1.5rem;
+}
+
+/* hide default checkbox */
+.ingridient_item input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+/* style text beside checkbox */
+.checkbox_ingridients {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #444;
+  margin-left: 3.5rem;
+  cursor: pointer;
+}
+
+.checked {
+  color: #ff5364;
+  text-decoration: line-through;
+}
+/* Style checkmark */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  background: rgba(255, 83, 100, 0.1);
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in;
+}
+
+/* On mouse-over, add a darker background color */
+.ingridient_item:hover .checkmark {
+  background-color: rgba(255, 83, 100, 0.35);
+}
+
+/* When the checkbox is checked, add an orange background */
+.ingridient_item .checked .checkmark {
+  background-color: #ff5364;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.ingridient_item .checked .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkmark:after {
+  left: 0.5rem;
+  top: 2px;
+  width: 1rem;
+  height: 1.3rem;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+
+/* Directions */
+.directions {
+  width: 40.625rem;
+  grid-column: 8/12;
+  margin-top: 5rem;
+  margin-bottom: 8rem;
+}
+
+.directions_list {
+  margin-top: 2rem;
+}
+
+.direction_item {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-left: 1.5rem;
+}
+
+.direction_item p {
+  width: 95%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #444;
+}
+
+.circle_number {
+  width: 5%;
+  text-align: center;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #ff5364;
+  color: #fff;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
 }
