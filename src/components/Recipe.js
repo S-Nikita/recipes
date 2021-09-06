@@ -1,4 +1,5 @@
 import React from 'react'
+import { navigate } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Fire from '../assets/fire.svg'
 import Time from '../assets/stopwatch.svg'
@@ -12,11 +13,10 @@ const Recipe = ({
     slug,
     category_item
 }) => {
-    let { localFile: image } = picture
     return (
-        <div className="recipe-card__cover">
+        <div className="recipe-card__cover" onClick={() => navigate(`/recipes/${slug}`)}>
             <div className="recipe-card__img">
-                <GatsbyImage image={getImage(image)} alt={title} />
+                <GatsbyImage image={getImage(picture.localFile)} alt={title} />
             </div>
             <div className="recipe-card__cover-details">
                 <div className="recipe-card_category">
@@ -37,9 +37,9 @@ const Recipe = ({
                         <p>{time} мин</p>
                     </div>
                     <div className="recipe-card_nutrition--difficulty">
-                        <Fork className={`${difficulty >= 1 ? 'svg_color' : ''}`} height="1.5rem" width="1.5rem" />
-                        <Fork className={`${difficulty >= 2 ? 'svg_color' : ''}`} height="1.5rem" width="1.5rem" />
-                        <Fork className={`${difficulty === 3 ? 'svg_color' : ''}`} height="1.5rem" width="1.5rem" />
+                        <Fork className={`${difficulty >= 1 ? 'svg_color' : 'svg_non_color'}`} height="1.5rem" width="1.5rem" />
+                        <Fork className={`${difficulty >= 2 ? 'svg_color' : 'svg_non_color'}`} height="1.5rem" width="1.5rem" />
+                        <Fork className={`${difficulty === 3 ? 'svg_color' : 'svg_non_color'}`} height="1.5rem" width="1.5rem" />
                     </div>
                 </div>
             </div>

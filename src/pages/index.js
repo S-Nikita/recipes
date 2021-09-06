@@ -7,15 +7,16 @@ import Recipes from "../components/Recipes"
 
 import "../css/main.css"
 
-const Index = ({data}) => {
-  const {allStrapiRecipe: {nodes:recipes}} = data
+const Index = ({ data }) => {
+  const { allStrapiRecipe: { nodes: recipes } } = data
+  console.log(data)
   return (
     <>
       <main>
         <Hero />
         <Project />
         <Category />
-        <Recipes recipes={recipes} title="Последние рецепты" showLink/>
+        <Recipes recipes={recipes} title="Последние рецепты" showLink />
       </main>
     </>
   )
@@ -27,6 +28,7 @@ export const query = graphql`
       nodes {
         calories_100
         category_item {
+          id
           title
         }
         difficulty

@@ -1,13 +1,23 @@
 import React from 'react'
 import { graphql } from "gatsby"
-import Recipe from "../components/Recipe"
+import Recipes from "../components/Recipes"
+import Dropdown from '../components/Dropdown'
+import itemsDropdown from '../constants/dropdown_menu'
 
-const RecipesPage = () => {
+
+const RecipesPage = ({
+  data: {
+    allStrapiRecipe: { nodes: recipes }
+  }
+}) => {
   return (
     <>
       <main>
         <section className="recipes-page">
-          <Recipe />
+          <div className="recipes_navigation">
+            <Dropdown title="Категория" items={itemsDropdown} />
+          </div>
+          <Recipes recipes={recipes} title="Просмотр рецептов" />
         </section>
       </main>
     </>
@@ -20,6 +30,7 @@ export const query = graphql`
       nodes {
         calories_100
         category_item {
+          id
           title
         }
         difficulty
@@ -33,22 +44,7 @@ export const query = graphql`
         }
         title
         time
-        calories_portion
-        carbs_100
-        carbs_portion
-        description
-        fat_100
-        fat_portion
-        direction_item {
-          direction_item
-          id
-        }
-        ingridient_item {
-          ingridients_item
-          id
-        }
-        protein_100
-        protein_portion
+        slug
       }
       totalCount
       distinct(field: id)

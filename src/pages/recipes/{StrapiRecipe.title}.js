@@ -36,7 +36,6 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
 
     // sort ingridient_items
     recipe.ingridient_item.sort(compare)
-    console.log(recipe.author)
     return (
         <>
             <main className="strapi-recipe">
@@ -134,7 +133,7 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
                                     <label htmlFor={`custom-checkbox-${ingridient.id}`}
                                         className={`${checkedState[index] ? 'checked ' : ''}checkbox_ingridients`}>
                                         {ingridient.ingridients_item}
-                                        <span className="checkmark"></span>
+                                        <span className="checkmark" key={ingridient.id}></span>
                                     </label>
                                 </li>
                             )
@@ -144,11 +143,11 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
                 <div className="directions">
                     <h3 className="strapi_recipe_h3">Процесс приготовления</h3>
                     <ul className="directions_list">
-                        {recipe.direction_item.map(direction => {
+                        {recipe.direction_item.map((direction, index) => {
                             return (
                                 <li className="direction_item" key={direction.id}>
-                                    <span className="circle_number">{direction.id}</span>
-                                    <p>{direction.direction_item}</p>
+                                    <span className="circle_number" key={direction.id}>{index + 1}</span>
+                                    <p key={direction.id}>{direction.direction_item}</p>
                                 </li>
                             )
                         })}
