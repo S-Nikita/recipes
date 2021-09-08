@@ -1,46 +1,54 @@
 import React, { useState } from 'react'
+import { navigate } from 'gatsby'
 import NextArrow from "../assets/next.svg"
 
-const Dropdown = ({ title, items = [], multiselect = false }) => {
+const Dropdown = ({ title, items = [], category_title }) => {
     const [open, setOpen] = useState(false)
     const [selection, setSelection] = useState([])
-    async function toggle() {
+    const toggle = () => {
         let drop_down = document.querySelector('.dd-list')
+        let recipe_nav = document.querySelector('.recipes_navigation')
+        let item_html = document.querySelectorAll('.dd-list__item')
         if (!open) {
             drop_down.classList.remove('animate_0')
             drop_down.classList.add('animate_1')
+            recipe_nav.style.marginBottom = "0px"
+            item_html.forEach(item => {
+                item.style.display = "block"
+            })
         } else {
             drop_down.classList.remove('animate_1')
             drop_down.classList.add('animate_0')
+            recipe_nav.style.marginBottom = "-12.5rem"
+            item_html.forEach(item => {
+                item.style.display = "none"
+            })
         }
 
-        let promise = new Promise((resolve, reject) => {
-            resolve(setOpen(!open))
-        })
-        await promise
-        if (!open && selection.length == 0) {
-            let all_categories = document.querySelector('.dd-list__item').firstChild
-            all_categories.classList.remove('btn_not_selected')
-            all_categories.classList.add('btn_selected')
-        }
+        setOpen(!open)
 
     }
     const handleOnClick = (item) => {
-        let list_title = document.querySelector('.dd-header__title--bold')
-        let all_categories = document.querySelector('.dd-list__item').firstChild
         let drop_down = document.querySelector('.dd-list')
         if (!selection.some(current => current.id == item.id)) {
-            if (!multiselect) {
-                setSelection([item])
-                all_categories.classList.remove('btn_selected')
-                all_categories.classList.add('btn_not_selected')
-                list_title.innerText = item.value
-                drop_down.classList.remove('animate_1')
-                drop_down.classList.add('animate_0')
-                setOpen(!open)
-            } else if (multiselect) {
-                setSelection([...selection, item])
+            setSelection([item])
+            drop_down.classList.remove('animate_1')
+            drop_down.classList.add('animate_0')
+            if (item.id == 1) {
+                navigate("/recipes")
+                title = item.value
             }
+            else if (item.id == 2) {
+                navigate("/categories/dinner")
+                title = item.value
+            } else if (item.id == 3) {
+                navigate("/categories/snacks")
+                title = item.value
+            } else if (item.id == 4) {
+                navigate("/categories/breakfast")
+                title = item.value
+            }
+            setOpen(!open)
         } else {
             let selectionAfterRemoval = selection
             selectionAfterRemoval.filter(
@@ -48,6 +56,7 @@ const Dropdown = ({ title, items = [], multiselect = false }) => {
             )
             setSelection([...selectionAfterRemoval])
         }
+        return title
     }
 
     const itemSelectedCheck = (item) => {
@@ -65,7 +74,7 @@ const Dropdown = ({ title, items = [], multiselect = false }) => {
                 onKeyPress={() => toggle(!open)}
                 onClick={() => toggle(!open)}>
                 <div className="dd-header__title">
-                    <p className="dd-header__title--bold">{title}</p>
+                    <p className="dd-header__title--bold">{category_title ? category_title : title}</p>
                 </div>
                 <div className="dd-header__action">
                     <NextArrow className={`recipes_svg ${open ? 'arrow_up' : ''}`} />

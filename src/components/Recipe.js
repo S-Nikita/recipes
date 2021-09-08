@@ -11,10 +11,11 @@ const Recipe = ({
     time,
     difficulty,
     slug,
-    category_item
+    category_item,
+    itemLayout
 }) => {
     return (
-        <div className="recipe-card__cover" onClick={() => navigate(`/recipes/${slug}`)}>
+        <div className={`${itemLayout < 4 ? "recipe-card__cover recipe-card__cover-margin" : "recipe-card__cover"}`} onClick={() => navigate(`/recipes/${slug}`)}>
             <div className="recipe-card__img">
                 <GatsbyImage image={getImage(picture.localFile)} alt={title} />
             </div>

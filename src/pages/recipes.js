@@ -1,23 +1,18 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import Recipes from "../components/Recipes"
-import Dropdown from '../components/Dropdown'
-import itemsDropdown from '../constants/dropdown_menu'
-
 
 const RecipesPage = ({
   data: {
-    allStrapiRecipe: { nodes: recipes }
+    allStrapiRecipe: { nodes: recipes, totalCount }
   }
+
 }) => {
   return (
     <>
       <main>
         <section className="recipes-page">
-          <div className="recipes_navigation">
-            <Dropdown title="Категория" items={itemsDropdown} />
-          </div>
-          <Recipes recipes={recipes} title="Просмотр рецептов" />
+          <Recipes recipes={recipes} title="Просмотр рецептов" showNav itemLayout={totalCount} />
         </section>
       </main>
     </>
