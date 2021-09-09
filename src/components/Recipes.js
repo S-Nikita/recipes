@@ -21,13 +21,18 @@ const Recipes = ({ recipes, title, showLink, showNav, category_title }) => {
             </div>
             }
             <div className="recipes-center">
-                {cards.map((card, index) => {
+                {title !== 'Последние рецепты' ? cards.map((card, index) => {
                     return (
                         <Recipe key={card.id} index={index} {...card} />
                     )
-                })}
+                }) :
+                    recipes.map((recipe, index) => {
+                        return (
+                            <Recipe key={recipe.id} index={index} {...recipe} />
+                        )
+                    })}
             </div>
-            {cards.length == 0 ?
+            {cards.length == 0 && title !== 'Последние рецепты' ?
                 <div className="div_not_found">
                     <h4>Извините, но по Вашему запросу ничего не найдено.</h4>
                     <p>Попробуйте изменить запрос или поискать в других категориях</p>

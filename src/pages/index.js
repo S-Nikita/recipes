@@ -11,7 +11,7 @@ const Index = ({ data }) => {
   const { allStrapiRecipe: { nodes: recipes } } = data
   return (
     <>
-      <main>
+      <main className="index">
         <Hero />
         <Project />
         <Category />

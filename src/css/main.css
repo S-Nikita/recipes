@@ -5,7 +5,7 @@
   --clr-grey-3: hsl(209, 34%, 30%);
   --clr-grey-4: hsl(209, 28%, 39%);
   /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-5: hsl(210, 22%, 35%);
   --clr-grey-8: hsl(210, 31%, 80%);
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
@@ -143,7 +143,10 @@ Navbar
   color: #ff5364;
   box-shadow: 0px 2px var(#ff5364);
 }
-
+/* Index page */
+.index h2 {
+  color: #ff5364 !important;
+}
 /*
 =============== 
 Hero
@@ -978,7 +981,7 @@ footer h4 span {
 /* RECIPES PAGE */
 .recipes-page {
   background: #f1f5f8;
-  padding-bottom: 6rem;
+  padding-bottom: 10rem;
 }
 
 .recipes_navigation {
@@ -987,7 +990,7 @@ footer h4 span {
   height: 12.5rem;
   width: 80rem;
   margin-top: 6rem;
-  margin-bottom: -12.5rem;
+  margin-bottom: -13rem;
   transition: all 0.3s;
 }
 
