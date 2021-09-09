@@ -9,7 +9,6 @@ import "../css/main.css"
 
 const Index = ({ data }) => {
   const { allStrapiRecipe: { nodes: recipes } } = data
-  console.log(data)
   return (
     <>
       <main>

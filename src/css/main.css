@@ -383,19 +383,15 @@ Last recipes
   margin-top: 4rem;
   font-size: 3rem;
   font-weight: 300;
-  color: #ff5364;
-}
-
-.recipes-center__flex {
-  flex-wrap: wrap;
-  justify-content: space-between;
+  color: hsl(210, 22%, 35%);
 }
 
 .recipes-center {
-  display: flex;
-  flex-direction: row;
   grid-column-start: 2;
   grid-column-end: 14;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 6rem;
 }
 
 .btn-last_recipes {
@@ -421,10 +417,6 @@ Recipe Card
   overflow: hidden;
   z-index: 30;
   transition: transform 0.3s ease-in-out;
-}
-
-.recipe-card__cover-margin {
-  margin-right: 6rem;
 }
 
 .recipe-card__cover-details {
@@ -1185,4 +1177,26 @@ button {
   height: 1px;
   width: 1px;
   overflow: hidden;
+}
+
+.div_not_found {
+  display: block;
+  grid-column: 2/14;
+  text-align: center;
+  justify-self: center;
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+  width: 50rem;
+  height: 10rem;
+}
+
+.div_not_found h4 {
+  color: #f82e42;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.div_not_found p {
+  font-size: 1.1rem;
+  font-weight: 400;
 }

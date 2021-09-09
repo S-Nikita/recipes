@@ -4,14 +4,14 @@ import Recipes from "../../components/Recipes"
 
 const Dinner = ({
   data: {
-    allStrapiRecipe: { nodes: recipes, totalCount }
+    allStrapiRecipe: { nodes: recipes }
   }
 }) => {
   return (
     <>
       <main>
         <section className="recipes-page">
-          <Recipes recipes={recipes} title="Основные блюда" showNav category_title="Основные блюда" itemLayout={totalCount} />
+          <Recipes recipes={recipes} title="Основные блюда" showNav category_title="Основные блюда" />
         </section>
       </main>
     </>
