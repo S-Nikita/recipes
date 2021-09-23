@@ -34,17 +34,17 @@ const Dropdown = ({ title, items = [], category_title }) => {
             setSelection([item])
             drop_down.classList.remove('animate_1')
             drop_down.classList.add('animate_0')
-            if (item.id == 1) {
+            if (item.id === 1) {
                 navigate("/recipes")
                 title = item.value
             }
-            else if (item.id == 2) {
+            else if (item.id === 2) {
                 navigate("/categories/dinner")
                 title = item.value
-            } else if (item.id == 3) {
+            } else if (item.id === 3) {
                 navigate("/categories/snacks")
                 title = item.value
-            } else if (item.id == 4) {
+            } else if (item.id === 4) {
                 navigate("/categories/breakfast")
                 title = item.value
             }
@@ -60,7 +60,7 @@ const Dropdown = ({ title, items = [], category_title }) => {
     }
 
     const itemSelectedCheck = (item) => {
-        if (selection.find(current => current.id == item.id)) {
+        if (selection.find(current => current.id === item.id)) {
             return true
         }
         return false

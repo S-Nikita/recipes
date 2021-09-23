@@ -3,7 +3,7 @@
   /*darkest grey for headings*/
   --clr-grey-1: hsl(209, 61%, 16%);
   --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-4: #102a42;
   /* grey used for paragraphs */
   --clr-grey-5: hsl(210, 22%, 35%);
   --clr-grey-8: hsl(210, 31%, 80%);
@@ -981,6 +981,7 @@ footer h4 span {
 /* RECIPES PAGE */
 .recipes-page {
   background: #f1f5f8;
+  margin-top: 6rem;
   padding-bottom: 10rem;
 }
 
@@ -1202,4 +1203,197 @@ button {
 .div_not_found p {
   font-size: 1.1rem;
   font-weight: 400;
+}
+
+/* Contact Page */
+.contact-page {
+  margin-top: 6rem;
+  background: #f1f5f8;
+  height: 63rem;
+}
+
+.contact-page h2 {
+  padding-top: 4rem;
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  color: hsl(210, 22%, 35%);
+  margin-bottom: 6rem;
+}
+
+.contact-page h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #ff5364;
+  margin-bottom: 1rem;
+}
+
+.contact-page p {
+  margin-bottom: 3rem;
+  width: 40rem;
+  line-height: 1.75rem;
+}
+
+.wrapper {
+  display: block;
+  margin-left: 24rem;
+  max-width: 62rem;
+}
+
+.contact-form {
+  width: 40rem;
+}
+
+.input-block {
+  position: relative;
+  height: 3rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  background-color: rgba(238, 238, 238, 0.5);
+  border: 1px solid #333;
+  border-radius: var(--radius);
+}
+
+.input-block:focus-within {
+  border-color: rgba(83, 186, 255, 1);
+  background-color: rgba(83, 186, 255, 0.1);
+  overflow: hidden;
+}
+
+.input-block span {
+  position: absolute;
+  left: 1rem;
+  top: 0.75rem;
+  transition: all 0.3s;
+}
+
+.input-block.text {
+  height: 8rem;
+}
+
+.input-block.text textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  margin-top: 1rem;
+  height: 6rem;
+  resize: none;
+}
+
+.form-control {
+  position: absolute;
+  z-index: 2;
+  bottom: 5px;
+  width: 95%;
+  height: 1.5rem;
+  font-size: 1rem;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  overflow: hidden;
+}
+
+.form-control:focus ~ span,
+.form-control:valid ~ span {
+  top: 0;
+  font-size: 0.8rem;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.btn-form {
+  height: 4rem;
+  width: 15rem;
+  display: block;
+  margin-top: 2.75rem;
+  margin-bottom: 6rem;
+}
+
+/* ABOUT PAGE */
+.about-page {
+  margin-top: 6rem;
+  background: #f1f5f8;
+  height: 98rem;
+}
+
+.about-page h2 {
+  padding-top: 4rem;
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  color: hsl(210, 22%, 35%);
+  margin-bottom: 6rem;
+}
+
+.about-wrapper {
+  display: block;
+  position: relative;
+  width: 71.25rem;
+  height: 69.5rem;
+  margin-left: 24.375rem;
+}
+
+.about-wrapper h3 {
+  display: block;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #ff5364;
+  margin: 2rem auto 1.5rem auto;
+}
+
+.wrapper-about_project h3 {
+  padding-top: 2rem;
+}
+
+.about_author-img {
+  display: block;
+  width: 29.2rem;
+  height: 36.5rem;
+}
+
+.about_author-img img {
+  border: 5px solid rgba(255, 83, 100, 0.8);
+  border-radius: var(--radius);
+}
+
+.wrapper-about_author {
+  text-align: left;
+  position: absolute;
+  top: 7rem;
+  left: 27.325rem;
+  width: 43.85rem;
+  height: 22.5rem;
+  background: rgb(248, 248, 248);
+  /* border: 2.5px solid rgba(255, 83, 98, 0.75); */
+  border-radius: var(--radius);
+}
+
+.wrapper-about_author p {
+  font-size: 1.25rem;
+  width: 90%;
+  margin: 0 5%;
+}
+
+.wrapper-about_project {
+  margin-top: 5rem;
+  background: rgba(83, 186, 255, 0.1);
+  border-radius: var(--radius);
+  width: 100%;
+  height: 29.5rem;
+}
+
+.wrapper-about_project p {
+  display: inline-block;
+  line-height: 2rem;
+  font-size: 1.25rem;
+  width: 78%;
+  margin: 0 11%;
 }
