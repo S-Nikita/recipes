@@ -6,8 +6,8 @@ const Hero = () => {
     return (
         <section className="hero">
             <article className="hero-main">
-                <h1>Пример главного заголовка</h1>
-                <h2>Подзаголовок описание</h2>
+                <h1>Пример заголовка</h1>
+                <h2>Пример подзаголовка</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis vel facilisis morbi.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis vel facilisis morbi.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis vel facilisis morbi.

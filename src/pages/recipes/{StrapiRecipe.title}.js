@@ -36,6 +36,17 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
 
     // sort ingridient_items
     recipe.ingridient_item.sort(compare)
+
+    // get video language
+    let classNameLanguage = ''
+    if (recipe.video_language !== '') {
+        if (recipe.video_language === 'EN') {
+            classNameLanguage = 'video_en'
+        } else {
+            classNameLanguage = 'video_ru'
+        }
+    }
+
     return (
         <>
             <main className="strapi-recipe">
@@ -72,7 +83,7 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
                                 {recipe.link ? <br></br> : ''}
                                 {recipe.link ? <br></br> : ''}
                                 {recipe.link ? 'Видео ' : ''}
-                                {recipe.link ? <a href={recipe.link} target="_blank">инструкция</a> : ''}
+                                {recipe.link ? <a href={recipe.link} target="_blank" className={`video_url ${classNameLanguage}`}>инструкция</a> : ''}
                             </p>
                         </div>
                     </div>
@@ -176,6 +187,7 @@ export const query = graphql`
         protein_100
         protein_portion
         time
+        video_language
         picture {
             localFile {
                 childImageSharp {

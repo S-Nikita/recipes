@@ -248,6 +248,7 @@ Project
   margin: 0;
   background-color: #f1f5f8;
   height: 54.125rem;
+  /* height: 64.125rem; */
 }
 
 .project-body {
@@ -764,6 +765,46 @@ footer h4 span {
 .recipe_desc_strapi a {
   text-decoration: none;
   color: #ff5364;
+}
+
+.video_url:hover:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 7.4rem;
+  width: 3.5rem;
+  height: 2rem;
+  border-radius: 2px;
+  /* background: #e4e5e6; */
+  background: #f1f5f8;
+  clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.video_url:hover:after {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 8.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: block;
+}
+
+.video_en:hover {
+  position: relative;
+}
+
+.video_ru:hover {
+  position: relative;
+}
+
+.video_en:hover:after {
+  content: url(united-kingdom-square.svg);
+}
+
+.video_ru:hover:after {
+  content: url(russia-square.svg);
 }
 
 .instruction_link {
@@ -1398,4 +1439,48 @@ button {
   font-size: 1.25rem;
   width: 78%;
   margin: 0 11%;
+}
+
+/* 404 PAGE */
+.error-page {
+  position: relative;
+  margin-top: -5rem;
+  background-image: url(wave.svg);
+  background-repeat: no-repeat;
+  aspect-ratio: 1920/1080;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.description {
+  position: absolute;
+  left: 5.5rem;
+  top: 30rem;
+}
+
+.description h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.description h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2rem;
+  color: hsl(210, 22%, 35%);
+}
+
+.error-container {
+  top: 8rem;
+  left: 50rem;
+  position: absolute;
+  display: block;
+}
+
+.error-container img {
+  width: 75%;
+  height: 100%;
 }
