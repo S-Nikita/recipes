@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 const Category = () => {
     return (
-        <section className="category">
+        <section className="category" id="category_id">
             <h2>Категории</h2>
             <div className="category_images">
                 <div className="category_img" onClick={() => navigate("categories/breakfast")}>

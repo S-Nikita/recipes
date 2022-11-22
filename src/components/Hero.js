@@ -8,24 +8,19 @@ const Hero = () => {
             <article className="hero-main">
                 <h1>Пример заголовка</h1>
                 <h2>Пример подзаголовка</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis vel facilisis morbi.
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis vel facilisis morbi.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis vel facilisis morbi.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis vel facilisis morbi.
                 </p>
-                <Link to="/about" className="btn">Вперед</Link>
+                <a href="#category_id" className="btn">Вперед</a>
             </article>
             <div className="hero_images">
                 <StaticImage
-                    src="../assets/hero_left.png"
-                    alt="Waffles on a white plate"
+                    src="../assets/blob4_hero.png"
+                    alt="Banana meal"
                     placeholder="blurred"
-                    className="img_left"
-                />
-                <StaticImage
-                    src="../assets/hero_right.png"
-                    alt="Healty food on a white plate"
-                    placeholder="blurred"
-                    className="img_right"
+                    className="img_hero"
                 />
             </div>
         </section>

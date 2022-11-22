@@ -129,7 +129,7 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
                     </div>
                 </div>
                 <div className="ingridients">
-                    <h3 className="strapi_recipe_h3">Ингридиенты</h3>
+                    <h3 className="strapi_recipe_h3">Ингредиенты</h3>
                     <ul className="ingridients_list">
                         {recipe.ingridient_item.map((ingridient, index) => {
                             return (
