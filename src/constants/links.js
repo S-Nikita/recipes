@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "gatsby";
+import TransitionLink from 'gatsby-plugin-transition-link';
 
 const data = [
     {
         id: 1,
         text: "Главная",
-        url: "/"
+        url: "/home"
     },
     {
         id: 2,
@@ -26,7 +26,11 @@ const data = [
 
 const tempLinks = data.map(link => {
     return (
-        <Link to={link.url} key={link.id}>{link.text}</Link>
+        <TransitionLink
+            to={link.url}
+            key={link.id}>
+            {link.text}
+        </TransitionLink>
     )
 })
 

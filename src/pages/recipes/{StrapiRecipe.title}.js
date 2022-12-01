@@ -5,9 +5,14 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Fire from '../../assets/fire.svg'
 import Time from '../../assets/stopwatch.svg'
 import Fork from '../../assets/fork.svg'
+import Transition from '../../components/Transitions';
+import gsap from 'gsap';
+import Navbar from "../../components/Navbar"
 
-const RecipeTemplate = ({ pageContext: { title }, data }) => {
+
+const RecipeTemplate = ({ pageContext: { title }, data, transitionStatus }) => {
     const { strapiRecipe: recipe } = data
+    const recipeTransition = gsap.timeline()
     let { localFile: image } = recipe.picture
 
     const [checkedState, setCheckedState] = useState(
@@ -49,6 +54,8 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
 
     return (
         <>
+            <Transition timeline={recipeTransition} />
+            <Navbar />
             <main className="strapi-recipe">
                 <h2>{title}</h2>
                 <div className="recipe-img">

@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import emailjs from 'emailjs-com'
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer } from 'react-notifications';
 import { NotificationManager } from 'react-notifications';
-import { useState } from 'react'
+import gsap from 'gsap';
+import Transition from '../components/Transitions';
+import Navbar from "../components/Navbar"
+
 
 export default function ContactPage() {
+    const contact = gsap.timeline();
     const [message, setMessage] = useState('');
     const [error, setError] = useState(null);
 
@@ -41,6 +45,8 @@ export default function ContactPage() {
 
     return (
         <>
+            <Transition timeline={contact} />
+            <Navbar />
             <main>
                 <section className="contact-page">
                     <h2>Контакты</h2>

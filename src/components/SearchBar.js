@@ -26,8 +26,8 @@ const SearchBar = ({ recipes, parentCallback }) => {
     parentCallback(cards)
     return (
         <form className="search_form" action="javascript:void(0);">
-            <label for="search">Поиск</label>
-            <input id="search" type="text" placeholder="Найти рецепт ..." autofocus required onChange={handleInputChange} />
+            <label htmlFor="search">Поиск</label>
+            <input id="search" type="text" placeholder="Найти рецепт ..." autoFocus required onChange={handleInputChange} />
             <button type="submit">
                 <Search />
             </button>

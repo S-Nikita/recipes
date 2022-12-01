@@ -1,6 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import TransitionLink from 'gatsby-plugin-transition-link'
+
 
 const Project = () => {
     return (
@@ -21,7 +22,7 @@ const Project = () => {
                         Blue bottle salvia post-ironic waistcoat, trust fund locavore heirloom vinyl thundercats letterpress offal.
                         Intelligentsia tote bag banh mi butcher. Kickstarter jean shorts try-hard, adaptogen pok pok pour-over occupy cardigan brooklyn.
                     </p>
-                    <Link to="/about" className="btn">подробнее</Link>
+                    <TransitionLink to="/about" className="btn" >подробнее</TransitionLink>
                 </article>
             </div>
         </section>

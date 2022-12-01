@@ -16,6 +16,8 @@
   "dependencies": {
     "emailjs-com": "^3.2.0",
     "gatsby": "^3.10.2",
+    "gatsby-awesome-pagination": "^0.3.8",
+    "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-image": "^1.10.1",
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^3.10.2",
@@ -23,9 +25,12 @@
     "gatsby-source-filesystem": "^3.10.0",
     "gatsby-source-strapi": "^1.0.2",
     "gatsby-transformer-sharp": "^3.10.0",
+    "gsap": "^3.11.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-notifications": "^1.7.4",
+    "react-scrollbar-size": "^5.0.0",
+    "reactstrap": "^9.1.5",
     "styled-components": "^5.3.0"
   },
   "devDependencies": {

@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from "gatsby"
 import Recipes from "../../components/Recipes"
+import gsap from 'gsap'
+import Transition from '../../components/Transitions'
+import Navbar from "../../components/Navbar"
 
 const Dinner = ({
   data: {
     allStrapiRecipe: { nodes: recipes }
   }
 }) => {
+  const dinner = gsap.timeline()
   return (
     <>
+      <Transition timeline={dinner} />
+      <Navbar />
       <main>
         <section className="recipes-page">
           <Recipes recipes={recipes} title="Основные блюда" showNav category_title="Основные блюда" />

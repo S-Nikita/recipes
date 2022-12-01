@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
+import Transition from '../components/Transitions';
+import Navbar from "../components/Navbar"
+import gsap from "gsap"
 
 const AboutPage = () => {
+    const about = gsap.timeline();
     return (
         <>
+            <Transition timeline={about} />
+            <Navbar />
             <main>
                 <section className="about-page">
                     <h2>О проекте</h2>

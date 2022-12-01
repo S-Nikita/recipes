@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { navigate } from 'gatsby'
 import NextArrow from "../assets/next.svg"
 
+
 const Dropdown = ({ title, items = [], category_title }) => {
     const [open, setOpen] = useState(false)
     const [selection, setSelection] = useState([])
@@ -30,10 +31,20 @@ const Dropdown = ({ title, items = [], category_title }) => {
     }
     const handleOnClick = (item) => {
         let drop_down = document.querySelector('.dd-list')
-        if (!selection.some(current => current.id == item.id)) {
+        let arrow = document.querySelector('.recipes_svg ')
+        let recipe_nav = document.querySelector('.recipes_navigation')
+
+        if (arrow.className === 'recipes_svg ') {
+            drop_down.classList.remove('animate_1')
+            drop_down.classList.add('animate_0')
+            recipe_nav.style.marginBottom = "-12.5rem"
+        }
+
+        if (!selection.some(current => current.id === item.id)) {
             setSelection([item])
             drop_down.classList.remove('animate_1')
             drop_down.classList.add('animate_0')
+            recipe_nav.style.marginBottom = "-12.5rem"
             if (item.id === 1) {
                 navigate("/recipes")
                 title = item.value

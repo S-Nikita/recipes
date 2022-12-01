@@ -1,10 +1,11 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
-
+import Navbar from "../components/Navbar"
 const Error = () => {
     return (
         <>
+            <Navbar />
             <main className="error-page">
                 <div className="description">
                     <h1>Страница не найдена</h1>

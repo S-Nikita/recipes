@@ -4,27 +4,27 @@ import Hero from "../components/Hero"
 import Project from "../components/Project"
 import Category from "../components/Category"
 import Recipes from "../components/Recipes"
-import Loader from "../components/Loader"
+import Transition from "../components/Transitions"
 import Navbar from "../components/Navbar"
 import gsap from "gsap"
 
 import "../css/main.css"
 
 const Index = ({ data }) => {
-  const { allStrapiRecipe: { nodes: recipes } } = data;
-
-  return (
-    <>
-      <Loader />
-      <Navbar />
-      <main className="index">
-        <Hero />
-        <Project />
-        <Category />
-        <Recipes recipes={recipes} title="Последние рецепты" showLink />
-      </main>
-    </>
-  )
+    const { allStrapiRecipe: { nodes: recipes } } = data;
+    const home = gsap.timeline();
+    return (
+        <>
+            <Transition timeline={home} />
+            <Navbar />
+            <main className="index">
+                <Hero />
+                <Project />
+                <Category />
+                <Recipes recipes={recipes} title="Последние рецепты" showLink />
+            </main>
+        </>
+    )
 }
 
 export const query = graphql`
