@@ -46,17 +46,17 @@ const Dropdown = ({ title, items = [], category_title }) => {
             drop_down.classList.add('animate_0')
             recipe_nav.style.marginBottom = "-12.5rem"
             if (item.id === 1) {
-                navigate("/recipes")
+                navigate("/recipes/1")
                 title = item.value
             }
             else if (item.id === 2) {
-                navigate("/categories/dinner")
+                navigate("/categories/dinner/1")
                 title = item.value
             } else if (item.id === 3) {
-                navigate("/categories/snacks")
+                navigate("/categories/snacks/1")
                 title = item.value
             } else if (item.id === 4) {
-                navigate("/categories/breakfast")
+                navigate("/categories/breakfast/1")
                 title = item.value
             }
             setOpen(!open)

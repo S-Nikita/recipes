@@ -4,11 +4,12 @@ import Recipes from "../../components/Recipes"
 import gsap from 'gsap'
 import Transition from '../../components/Transitions'
 import Navbar from "../../components/Navbar"
+import Pager from '../../components/Pager'
 
 const Dinner = ({
   data: {
     allStrapiRecipe: { nodes: recipes }
-  }
+  }, pageContext
 }) => {
   const dinner = gsap.timeline()
   return (
@@ -18,6 +19,7 @@ const Dinner = ({
       <main>
         <section className="recipes-page">
           <Recipes recipes={recipes} title="Основные блюда" showNav category_title="Основные блюда" />
+          <Pager currentPage={pageContext.currentPage} numPages={pageContext.numPages} categoryLink="/categories/dinner" />
         </section>
       </main>
     </>
@@ -25,10 +27,13 @@ const Dinner = ({
 }
 
 export const query = graphql`
+  query Dinner($skip: Int!, $limit: Int!)
   {
   allStrapiRecipe(
     sort: {fields: id, order: DESC}
     filter: {category_item: {elemMatch: {title: {eq: "Основное блюдо"}}}}
+    limit: $limit
+    skip: $skip
   ) {
     nodes {
       calories_100

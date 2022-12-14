@@ -37,7 +37,7 @@ const Recipes = ({ recipes, title, showLink, showNav, category_title }) => {
                     <h4>Извините, но по Вашему запросу ничего не найдено.</h4>
                     <p>Попробуйте изменить запрос или поискать в других категориях</p>
                 </div> : ''}
-            {showLink && <TransitionLink to="/recipes/" className="btn btn-last_recipes">Все рецепты</TransitionLink>}
+            {showLink && <TransitionLink to="/recipes/1" className="btn btn-last_recipes">Все рецепты</TransitionLink>}
         </section>
     )
 }
