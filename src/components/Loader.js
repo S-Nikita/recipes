@@ -5,7 +5,9 @@ import { gsap, CSSPlugin, Expo, Power4 } from "gsap";
 gsap.registerPlugin(CSSPlugin);
 
 function getScrollbarWidth() {
-
+    if (typeof window === 'undefined' || !window.document || !document.body) {
+        return 0;
+    }
     // Creating invisible container
     const outer = document.createElement('div');
     outer.style.visibility = 'hidden';
@@ -29,6 +31,7 @@ function getScrollbarWidth() {
 
 
 const scrollBarWidth = getScrollbarWidth();
+
 function Loader() {
     const lockScroll = React.useCallback(() => {
         document.body.style.overflow = 'hidden';
