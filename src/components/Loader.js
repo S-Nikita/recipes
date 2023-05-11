@@ -115,6 +115,7 @@ const Loading = styled.div`
   align-items: center;
   position: absolute;
   top: 0;
+  z-index: 999;
 `;
 const Follow = styled.div`
   position: absolute;

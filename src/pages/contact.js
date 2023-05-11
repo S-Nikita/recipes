@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer } from 'react-notifications';
 import { NotificationManager } from 'react-notifications';
 import gsap from 'gsap';
 import Transition from '../components/Transitions';
-import Navbar from "../components/Navbar"
+import socialLinks from '../constants/social_links'
 
 
 export default function ContactPage() {
@@ -46,33 +46,47 @@ export default function ContactPage() {
     return (
         <>
             <Transition timeline={contact} />
-            <Navbar />
-            <main>
+            <main className='contacts'>
                 <section className="contact-page">
-                    <h2>Контакты</h2>
                     <div className="wrapper">
-                        <h3>Свяжитесь со мной</h3>
-                        <p className="contact-text">Unicorn prism migas, cronut mixtape drinking vinegar brunch vape. Meggings godard pop-up, wolf listicle shaman jianbing vice. Blog snackwave tilde, thundercats austin asymmetrical ugh cardigan. Quinoa tote bag whatever, hammock vegan wolf glossier street art ethical hoodie selvage cliche vice twee. Bushwick yr wayfarers authentic woke.</p>
-                        <div className="contact-info">
-                            <form onSubmit={sendEmail} className="contact-form">
-                                <div className="input-block" tabIndex="1">
-                                    <input type="text" className="form-control name" name='from_name' required />
-                                    <span>Имя</span>
-                                </div>
-                                <div className={`${!error ? 'input-block' : 'input-block error'}`} tabIndex="2">
-                                    <input type="text" className="form-control email" name='reply_to' value={message} onChange={handleChange} required />
-                                    <span>Электронный адрес</span>
-                                </div>
-                                <div className="input-block" tabIndex="3">
-                                    <input type="text" className="form-control subject" name='subject' required />
-                                    <span>Тема сообщения</span>
-                                </div>
-                                <div className="input-block text" tabIndex="4">
-                                    <textarea type="text" className="form-control text" name='message' required />
-                                    <span>Сообщение</span>
-                                </div>
-                                <button className="btn btn-form" type="submit">Отправить</button>
-                            </form>
+                        <h2>Контакты</h2>
+                        <div className="main-wrapper">
+                            <h3>Свяжитесь со мной</h3>
+                            <p className="contact-text">
+                                Если у тебя есть какие-либо вопросы, пожелания или, ты хочешь предложить свой рецепт. Не стесняйся связаться со мной любым удобным для тебя способом: заполнив форму ниже или в соц. сетях.
+                                <br/>
+                                И я постараюсь ответить с первой космической скоростью.
+                            </p>
+                            <div className="social-links" id='contacts-link'>
+                                    {socialLinks.map(link => {
+                                            return (
+                                                    <a href={link.url} key={link.id} className="social-link">
+                                                            {link.icon}
+                                                    </a>
+                                            )
+                                    })}
+                            </div>
+                            <div className="contact-info">
+                                <form onSubmit={sendEmail} className="contact-form">
+                                    <div className="input-block" tabIndex="1">
+                                        <input type="text" className="form-control name" name='from_name' required />
+                                        <span>Имя</span>
+                                    </div>
+                                    <div className={`${!error ? 'input-block' : 'input-block error'}`} tabIndex="2">
+                                        <input type="text" className="form-control email" name='reply_to' value={message} onChange={handleChange} required />
+                                        <span>Электронный адрес</span>
+                                    </div>
+                                    <div className="input-block" tabIndex="3">
+                                        <input type="text" className="form-control subject" name='subject' required />
+                                        <span>Тема сообщения</span>
+                                    </div>
+                                    <div className="input-block text" tabIndex="4">
+                                        <textarea type="text" className="form-control text" name='message' required />
+                                        <span>Сообщение</span>
+                                    </div>
+                                    <button className="btn btn-form" type="submit">Отправить</button>
+                                </form>
+                            </div>  
                         </div>
                     </div>
                 </section>

@@ -9,7 +9,7 @@ const Project = () => {
             <div className="project-body">
                 <div className="picture">
                     <div className="about-img">
-                        <StaticImage src="../assets/dessert.png" alt="donuts" />
+                        <StaticImage src="../assets/dessert.png" alt="donuts" placeholder="blurred" />
                     </div>
                     <div className="shape">
                         <img />
@@ -17,12 +17,11 @@ const Project = () => {
                 </div>
                 <article className="project-description">
                     <h2>О проекте</h2>
-                    <p>I'm baby wayfarers helvetica subway tile iPhone umami lomo man bun trust fund wayfarers vegan blog shoreditch master cleanse williamsburg pabst.
-                        Crucifix humblebrag flexitarian literally hammock street art authentic cronut pork belly.
-                        Blue bottle salvia post-ironic waistcoat, trust fund locavore heirloom vinyl thundercats letterpress offal.
-                        Intelligentsia tote bag banh mi butcher. Kickstarter jean shorts try-hard, adaptogen pok pok pour-over occupy cardigan brooklyn.
+                    <p>Добро пожаловать на сайт, где ты сможешь найти множество вкусных рецептов низкокалорийных блюд с высоким содержанием белка. Являющихся аналогами всеми любимых кулинарных произведений. <br/><br/>
+                        Задача проекта – сломать стереотип о том,  что “курица, брокколи и рис” это рецепт успеха, когда речь заходит о похудении и поддержании спортивной формы. <br/><br/>
+                        Какой бы не была твоя цель: пляжная фигура, похудение, поддержание и набор мышечной массы или здоровое питание. Не обязательно полностью отказываться от любимой еды, чтобы достичь желаемого результата.
                     </p>
-                    <TransitionLink to="/about" className="btn" >подробнее</TransitionLink>
+                    <TransitionLink to="/about" className="btn project-descr--btn" >подробнее</TransitionLink>
                 </article>
             </div>
         </section>

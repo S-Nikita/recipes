@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import Recipes from "../components/Recipes"
 import gsap from 'gsap'
 import Transition from '../components/Transitions'
-import Navbar from "../components/Navbar"
 import Pager from "../components/Pager"
 
 
@@ -15,16 +14,15 @@ const RecipesPage = ({
 }) => {
   const recipesTransition = gsap.timeline();
   console.log(pageContext)
+
   return (
     <>
       <Transition timeline={recipesTransition} />
-      <Navbar />
       <main>
         <section className="recipes-page">
-          <Recipes recipes={recipes} title="Просмотр рецептов" showNav />
-          <Pager currentPage={pageContext.currentPage} numPages={pageContext.numPages} categoryLink="/recipes" />
+            <Recipes recipes={recipes} title="Просмотр рецептов" showNav />
+            <Pager currentPage={pageContext.currentPage} numPages={pageContext.numPages} categoryLink="/recipes" />
         </section>
-
       </main>
     </>
   )

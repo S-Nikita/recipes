@@ -248,7 +248,7 @@ async function paginate({
     }
 
     const recipes = data.allStrapiRecipe.edges;
-    const recipesPerPage = 2;
+    const recipesPerPage = 12;
     const numPages = Math.ceil(recipes.length / recipesPerPage);
     console.log(recipes);
 

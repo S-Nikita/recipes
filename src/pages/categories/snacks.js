@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { graphql } from "gatsby"
 import Recipes from "../../components/Recipes"
 import gsap from 'gsap'
 import Transition from '../../components/Transitions'
-import Navbar from "../../components/Navbar"
 import Pager from '../../components/Pager'
 
 const Snacks = ({
@@ -15,7 +14,6 @@ const Snacks = ({
   return (
     <>
       <Transition timeline={snacks} />
-      <Navbar />
       <main>
         <section className="recipes-page">
           <Recipes recipes={recipes} title="Перекус" showNav category_title="Перекус" />

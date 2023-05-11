@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Hero from "../components/Hero"
 import Project from "../components/Project"
 import Category from "../components/Category"
 import Recipes from "../components/Recipes"
 import Transition from "../components/Transitions"
-import Navbar from "../components/Navbar"
 import gsap from "gsap"
 
 import "../css/main.css"
@@ -16,7 +15,6 @@ const Index = ({ data }) => {
     return (
         <>
             <Transition timeline={home} />
-            <Navbar />
             <main className="index">
                 <Hero />
                 <Project />

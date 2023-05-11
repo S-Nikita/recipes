@@ -1,5 +1,3 @@
-import React from "react";
-import TransitionLink from 'gatsby-plugin-transition-link';
 
 const data = [
     {
@@ -24,20 +22,4 @@ const data = [
     },
 ]
 
-const tempLinks = data.map(link => {
-    return (
-        <TransitionLink
-            to={link.url}
-            key={link.id}>
-            {link.text}
-        </TransitionLink>
-    )
-})
-
-export default ({ styleClass }) => {
-    return (
-        <div className={styleClass}>
-            {tempLinks}
-        </div>
-    )
-}
+export default data
