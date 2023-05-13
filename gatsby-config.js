@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "https://strapi-backend-up8o.onrender.com",
+        apiURL: "https://strapi-3-6-5.onrender.com",
         collectionTypes: [`recipe`],
         queryLimit: 1000,
       },
