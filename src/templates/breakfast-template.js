@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from "gatsby"
-import Recipes from "../../components/Recipes"
-import Transition from '../../components/Transitions'
+import Recipes from "../components/Recipes"
+import Transition from '../components/Transitions'
 import gsap from 'gsap'
-import Pager from '../../components/Pager'
+import Pager from '../components/Pager'
 
 const Breakfast = ({
   data: {

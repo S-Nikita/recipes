@@ -5,7 +5,6 @@ import gsap from 'gsap'
 import Transition from '../components/Transitions'
 import Pager from "../components/Pager"
 
-
 const RecipesPage = ({
   data: {
     allStrapiRecipe: { nodes: recipes }

@@ -14,35 +14,35 @@ exports.createPages = async ({ graphql, actions }) => {
             actions,
             category: 'Завтрак',
             pathPrefix: '/categories/breakfast/',
-            component: path.resolve('./src/pages/categories/breakfast.js'),
+            component: path.resolve('./src/templates/breakfast-template.js'),
         }),
         paginate({
             graphql,
             actions,
             category: 'Основное блюдо',
             pathPrefix: '/categories/dinner/',
-            component: path.resolve('./src/pages/categories/dinner.js'),
+            component: path.resolve('./src/templates/dinner-template.js'),
         }),
         paginate({
             graphql,
             actions,
             category: 'Перекус',
             pathPrefix: '/categories/snacks/',
-            component: path.resolve('./src/pages/categories/snacks.js'),
+            component: path.resolve('./src/templates/snacks-template.js'),
         }),
         paginate({
             graphql,
             actions,
             category: '',
             pathPrefix: '/recipes/',
-            component: path.resolve('./src/pages/recipes.js'),
+            component: path.resolve('./src/templates/recipes-template.js'),
         }),
     ]);
 
 }
 
 async function makeBreakfastFromAllStrapiRecipe({ graphql, actions }) {
-    const breakfastPage = path.resolve('./src/pages/categories/breakfast.js');
+    const breakfastPage = path.resolve('./src/templates/breakfast.js');
     const { errors, data } = await graphql(
         `
         {
@@ -82,7 +82,7 @@ async function makeBreakfastFromAllStrapiRecipe({ graphql, actions }) {
 }
 
 async function makeDinnerFromAllStrapiRecipe({ graphql, actions }) {
-    const dinnerPage = path.resolve('./src/pages/categories/dinner.js');
+    const dinnerPage = path.resolve('./src/templates/dinner-template.js');
     const { errors, data } = await graphql(
         `
         {
@@ -122,7 +122,7 @@ async function makeDinnerFromAllStrapiRecipe({ graphql, actions }) {
 }
 
 async function makeSnackFromAllStrapiRecipe({ graphql, actions }) {
-    const snacksPage = path.resolve('./src/pages/categories/snacks.js');
+    const snacksPage = path.resolve('./src/templates/snacks-template.js');
     const { errors, data } = await graphql(
         `
         {
@@ -162,7 +162,7 @@ async function makeSnackFromAllStrapiRecipe({ graphql, actions }) {
 }
 
 async function makeAllRecipesFromAllStrapiRecipe({ graphql, actions }) {
-    const recipesPage = path.resolve('./src/pages/recipes.js');
+    const recipesPage = path.resolve('./src/templates/recipes-template.js');
     const { errors, data } = await graphql(
         `
         {

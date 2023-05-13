@@ -8,7 +8,6 @@ import Fork from '../../assets/fork.svg'
 import Transition from '../../components/Transitions';
 import gsap from 'gsap';
 
-
 const RecipeTemplate = ({ pageContext: { title }, data, transitionStatus }) => {
     const { strapiRecipe: recipe } = data
     const recipeTransition = gsap.timeline()

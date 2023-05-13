@@ -7,7 +7,6 @@ import gsap from 'gsap';
 import Transition from '../components/Transitions';
 import socialLinks from '../constants/social_links'
 
-
 export default function ContactPage() {
     const contact = gsap.timeline();
     const [message, setMessage] = useState('');

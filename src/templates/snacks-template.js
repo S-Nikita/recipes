@@ -1,23 +1,23 @@
 import React from 'react'
 import { graphql } from "gatsby"
-import Recipes from "../../components/Recipes"
+import Recipes from "../components/Recipes"
 import gsap from 'gsap'
-import Transition from '../../components/Transitions'
-import Pager from '../../components/Pager'
+import Transition from '../components/Transitions'
+import Pager from '../components/Pager'
 
-const Dinner = ({
+const Snacks = ({
   data: {
     allStrapiRecipe: { nodes: recipes }
   }, pageContext
 }) => {
-  const dinner = gsap.timeline()
+  const snacks = gsap.timeline()
   return (
     <>
-      <Transition timeline={dinner} />
+      <Transition timeline={snacks} />
       <main>
         <section className="recipes-page">
-          <Recipes recipes={recipes} title="Основные блюда" showNav category_title="Основные блюда" />
-          <Pager currentPage={pageContext.currentPage} numPages={pageContext.numPages} categoryLink="/categories/dinner" />
+          <Recipes recipes={recipes} title="Перекус" showNav category_title="Перекус" />
+          <Pager currentPage={pageContext.currentPage} numPages={pageContext.numPages} categoryLink="/categories/snacks" />
         </section>
       </main>
     </>
@@ -25,11 +25,11 @@ const Dinner = ({
 }
 
 export const query = graphql`
-  query Dinner($skip: Int!, $limit: Int!)
+  query Snacks($skip: Int!, $limit: Int!)
   {
   allStrapiRecipe(
     sort: {fields: id, order: DESC}
-    filter: {category_item: {elemMatch: {title: {eq: "Основное блюдо"}}}}
+    filter: {category_item: {elemMatch: {title: {eq: "Перекус"}}}}
     limit: $limit
     skip: $skip
   ) {
@@ -57,4 +57,4 @@ export const query = graphql`
   }
 }
 `
-export default Dinner
+export default Snacks
