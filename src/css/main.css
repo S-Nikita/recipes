@@ -1034,8 +1034,6 @@ Project
 .project-description p br{
   display: block;
   content: "";
-  margin: 0.75rem
-
 }
 
 .project-descr--btn {
@@ -3053,8 +3051,6 @@ button {
 .wrapper-about_project p br{
   display: block;
   content: "";
-  margin: 0.75rem
-
 }
 
 .about-wrapper span {
