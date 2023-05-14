@@ -6,6 +6,7 @@ import Fire from '../../assets/fire.svg'
 import Time from '../../assets/stopwatch.svg'
 import Fork from '../../assets/fork.svg'
 import Transition from '../../components/Transitions';
+import SEO from "../../components/Seo"
 import gsap from 'gsap';
 
 const RecipeTemplate = ({ pageContext: { title }, data, transitionStatus }) => {
@@ -52,6 +53,7 @@ const RecipeTemplate = ({ pageContext: { title }, data, transitionStatus }) => {
 
     return (
         <>
+            <SEO title={title.toUpperCase()} description={recipe.description} />
             <Transition timeline={recipeTransition} />
             <main className="strapi-recipe">
                 <h2>{title}</h2>

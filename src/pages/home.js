@@ -5,6 +5,7 @@ import Project from "../components/Project"
 import Category from "../components/Category"
 import Recipes from "../components/Recipes"
 import Transition from "../components/Transitions"
+import SEO from "../components/Seo"
 import gsap from "gsap"
 
 import "../css/main.css"
@@ -14,6 +15,7 @@ const Index = ({ data }) => {
     const home = gsap.timeline();
     return (
         <>
+            <SEO title="Главная"/>
             <Transition timeline={home} />
             <main className="index">
                 <Hero />

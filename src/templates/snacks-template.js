@@ -4,6 +4,7 @@ import Recipes from "../components/Recipes"
 import gsap from 'gsap'
 import Transition from '../components/Transitions'
 import Pager from '../components/Pager'
+import SEO from "../components/Seo"
 
 const Snacks = ({
   data: {
@@ -13,6 +14,7 @@ const Snacks = ({
   const snacks = gsap.timeline()
   return (
     <>
+      <SEO title="Перекус"/>
       <Transition timeline={snacks} />
       <main>
         <section className="recipes-page">

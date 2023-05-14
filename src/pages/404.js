@@ -1,10 +1,12 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+import SEO from "../components/Seo"
 
 const Error = () => {
     return (
         <>
+            <SEO title="404"/>
             <main className="error-page">
                 <div className="error-wrapper">
                     <div className="description">

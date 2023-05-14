@@ -4,6 +4,7 @@ import Recipes from "../components/Recipes"
 import Transition from '../components/Transitions'
 import gsap from 'gsap'
 import Pager from '../components/Pager'
+import SEO from "../components/Seo"
 
 const Breakfast = ({
   data: {
@@ -14,6 +15,7 @@ const Breakfast = ({
   console.log(pageContext)
   return (
     <>
+      <SEO title="Завтраки"/>
       <Transition timeline={breakfast} />
       <main>
         <section className="recipes-page">

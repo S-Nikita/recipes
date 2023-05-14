@@ -1863,8 +1863,8 @@ footer h4 span {
   content: "";
   position: absolute;
   z-index: 1;
-  top: 0;
-  left: 7.4rem;
+  top: -0.2rem;
+  left: 8.2rem;
   width: 3.5rem;
   height: 2rem;
   border-radius: 2px;
@@ -1876,8 +1876,8 @@ footer h4 span {
 .video_url:hover:after {
   position: absolute;
   z-index: 2;
-  top: 0;
-  left: 8.5rem;
+  top: -0.2rem;
+  left: 9.4rem;
   width: 2rem;
   height: 2rem;
   display: block;

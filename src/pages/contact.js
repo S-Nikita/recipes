@@ -6,6 +6,7 @@ import { NotificationManager } from 'react-notifications';
 import gsap from 'gsap';
 import Transition from '../components/Transitions';
 import socialLinks from '../constants/social_links'
+import SEO from "../components/Seo"
 
 export default function ContactPage() {
     const contact = gsap.timeline();
@@ -44,6 +45,7 @@ export default function ContactPage() {
 
     return (
         <>
+            <SEO title="Контакты"/>
             <Transition timeline={contact} />
             <main className='contacts'>
                 <section className="contact-page">

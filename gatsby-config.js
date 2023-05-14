@@ -3,15 +3,44 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+console.log(process.env.GA_TRACKING_ID)
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby`,
-    siteUrl: `https://www.gatsbyjs.com`,
-    description: `Blazing fast modern site generator for React`,
+    title: `Shred Kitchen`,
+    siteUrl: `https://shredkitchen.gatsbyjs.io`,
+    description: `Низкокалорийные рецепты с высоким содержанием белка`,
+    titleTemplate: `%s | ShredKitchen`,
+    instagramUsername: `@xof.nikita`,
+    image: `/helmet_main.jpeg`
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: process.env.GA_TRACKING_ID,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-yandex-metrica`,
+      options: {
+        trackingId: process.env.YM_TRACKING_ID,
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        trackHash: true,
+
+        // Detailed recordings of user activity on the site: mouse movement, scrolling, and clicks.
+        webvisor: true,
+      }
+    },
     `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-anchor-links`,

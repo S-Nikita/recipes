@@ -1,12 +1,14 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import Transition from '../components/Transitions';
+import SEO from "../components/Seo"
 import gsap from "gsap"
 
 const AboutPage = () => {
     const about = gsap.timeline();
     return (
         <>
+            <SEO title="О проекте"/>
             <Transition timeline={about} />
             <main>
                 <section className="about-page">
