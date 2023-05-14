@@ -43,14 +43,21 @@ const SEO = ({ title, description, image }) => {
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SKSBFYK48"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
+      <script
+      async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1SKSBFYK48"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'G-1SKSBFYK48');
-      </script>
+        `,
+        }}
+        />
       <link rel="icon" type="image/x-icon" href={skFavicon} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
