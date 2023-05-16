@@ -2720,7 +2720,7 @@ button {
   width: 77.08vw;
   margin: auto;
   margin-top: 6.5625rem;
-  margin-bottom: 0;
+  padding-bottom: 4rem;
 }
 
 .contact-page h2 {
@@ -2900,6 +2900,9 @@ button {
 }
 
 @media (600px >= width) {
+  .contact-page {
+    width: 96vw;
+  }
   .contact-page h2 {
     text-align: center;
     font-size: 3rem;

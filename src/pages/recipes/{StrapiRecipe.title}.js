@@ -50,10 +50,10 @@ const RecipeTemplate = ({ pageContext: { title }, data, transitionStatus }) => {
             classNameLanguage = 'video_ru'
         }
     }
-    console.log(recipe.picture.url)
+
     return (
         <>
-            <SEO title={title} description={recipe.description} image={recipe.picture.url}/>
+            <SEO title={title} description={recipe.description} image={recipe.picture.localFile.url}/>
             <Transition timeline={recipeTransition} />
             <main className="strapi-recipe">
                 <h2>{title}</h2>
@@ -205,8 +205,8 @@ query getSingleRecipe($title: String) {
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
           }
+          url
         }
-        url
       }
       ingridient_item {
         id

@@ -12,7 +12,7 @@ const Breakfast = ({
   }, pageContext
 }) => {
   const breakfast = gsap.timeline();
-  console.log(pageContext)
+
   return (
     <>
       <SEO title="Завтраки"/>

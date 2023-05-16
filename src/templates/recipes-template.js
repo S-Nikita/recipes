@@ -13,7 +13,6 @@ const RecipesPage = ({
   pageContext
 }) => {
   const recipesTransition = gsap.timeline();
-  console.log(pageContext)
 
   return (
     <>
