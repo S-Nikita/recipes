@@ -816,6 +816,7 @@ Project
   margin: 0;
   background-color: #f1f5f8;
   height: 47rem;
+  height: auto;
   /* height: 64.125rem; */
 }
 
@@ -856,7 +857,7 @@ Project
   }
 }
 
-@media (400px <= width < 600px) {
+@media (320px <= width < 600px) {
   .project {
     height: 45rem;
   }
@@ -869,7 +870,7 @@ Project
   }
 }
 
-@media (width < 400px) {
+@media (width < 340px) {
   .project {
     height: 50rem;
   }
@@ -1570,7 +1571,7 @@ Recipe Card
     margin-top: 2rem;
     margin-bottom: 4rem;
     font-size: 1rem;
-    padding: 1rem 3.5rem;
+    padding: 0.75rem 3.5rem;
   }
 }
 

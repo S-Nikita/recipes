@@ -50,10 +50,10 @@ const RecipeTemplate = ({ pageContext: { title }, data, transitionStatus }) => {
             classNameLanguage = 'video_ru'
         }
     }
-
+    console.log(recipe.picture.url)
     return (
         <>
-            <SEO title={title.toUpperCase()} description={recipe.description} />
+            <SEO title={title} description={recipe.description} image={recipe.picture.url}/>
             <Transition timeline={recipeTransition} />
             <main className="strapi-recipe">
                 <h2>{title}</h2>
@@ -182,41 +182,42 @@ const RecipeTemplate = ({ pageContext: { title }, data, transitionStatus }) => {
 }
 
 export const query = graphql`
-    query getSingleRecipe($title: String) {
+query getSingleRecipe($title: String) {
     strapiRecipe(title: {eq: $title}) {
-        author
-        author_link
-        title
-        calories_100
-        calories_portion
-        carbs_100
-        carbs_portion
-        fat_100
-        fat_portion
-        description
-        difficulty
-        link
-        protein_100
-        protein_portion
-        time
-        video_language
-        picture {
-            localFile {
-                childImageSharp {
-                    gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-                }
-            }
+      author
+      author_link
+      title
+      calories_100
+      calories_portion
+      carbs_100
+      carbs_portion
+      fat_100
+      fat_portion
+      description
+      difficulty
+      link
+      protein_100
+      protein_portion
+      time
+      video_language
+      picture {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+          }
         }
-        ingridient_item {
+        url
+      }
+      ingridient_item {
         id
         ingridients_item
-        }
-        direction_item {
+      }
+      direction_item {
         direction_item
         id
-        }
+      }
     }
-    }
+  }
 `
 
 export default RecipeTemplate

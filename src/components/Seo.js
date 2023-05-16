@@ -42,7 +42,6 @@ const SEO = ({ title, description, image }) => {
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
-      <!-- Google tag (gtag.js) -->
       <script
       async
         src="https://www.googletagmanager.com/gtag/js?id=G-1SKSBFYK48"
