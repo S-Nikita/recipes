@@ -1803,6 +1803,7 @@ footer h4 span {
 .strapi-recipe_main-description {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 40.625rem;
 }
 
