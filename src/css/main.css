@@ -822,6 +822,16 @@ footer h4 span {
   text-align: left;
 }
 
+@media(width < 1300px) {
+  .recipe_desc_strapi {
+    max-height: none;
+  }
+  
+  .recipe_desc_strapi p {
+     max-height: none;
+  }
+}
+
 .recipe_desc_strapi br {
   display: block;
   /* makes it have a width */
