@@ -2111,8 +2111,8 @@ footer h4 span {
   width: 5%;
   text-align: center;
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
   border-radius: 50%;
   background-color: #ff5364;
   color: #fff;
@@ -2171,9 +2171,11 @@ footer h4 span {
 
   .recipe_desc_strapi {
     align-self: center;
+    max-height: none;
   }
 
   .recipe_desc_strapi p {
+    max-height: none;
     height: auto;
   }
 
@@ -2329,10 +2331,15 @@ footer h4 span {
     .directions {
       width: 96vw;
     }
-
+  
+    .ingridient_item {
+      margin: 2rem 0 1rem 0.5rem;
+    }
+  
     .direction_item {
       flex-wrap: nowrap;
       align-content: center;
+      margin-left: .5rem
     }
 
     .direction_item p {
