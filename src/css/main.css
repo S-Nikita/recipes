@@ -1716,13 +1716,13 @@ footer h4 span {
 .recipe-img {
   display: block;
   width: min(33rem, 47.57vw);
-  height: min(41.25rem, 59.46vw);
+  height: auto;
 }
 
 .recipe-img img {
   display: block;
   width: min(33rem, 47.57vw);
-  height: min(41.25rem, 59.46vw);
+  height: auto;
   border-radius: var(--radius);
 }
 
@@ -2151,12 +2151,10 @@ footer h4 span {
 
   .recipe-img {
     width: 33rem;
-    height: 41.25rem;
   }
   
   .recipe-img img {
     width: 33rem;
-    height: 41.25rem;
   }
 
   .strapi-recipe_main-description {
@@ -2228,12 +2226,10 @@ footer h4 span {
 
     .recipe-img {
       width: min(33rem, 75.42vw);
-      height: min(41.25rem, 94.29vw);
     }
 
     .recipe-img img {
       width: min(33rem, 75.42vw);
-      height: min(41.25rem, 94.29vw);
     }
 
     .recipe-card_nutrition--strapi {
