@@ -816,7 +816,6 @@ Project
   margin: 0;
   background-color: #f1f5f8;
   height: 47rem;
-  height: auto;
   /* height: 64.125rem; */
 }
 
@@ -1324,8 +1323,8 @@ Recipe Card
 
 .recipe-card_category {
   position: absolute;
-  top: min(1.5rem, 1.67vw);
-  left: min(4.5rem, 4.69vw);
+  top: 1.5rem;
+  left: 1rem;
   color: rgba(224, 227, 229, 1);
   transition: transform 0.3s ease-in;
   transform: translateY(-280%);
@@ -1533,7 +1532,7 @@ Recipe Card
     margin-left: 1rem;
     color: #fff;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1.8rem;
   }
 
@@ -1572,6 +1571,20 @@ Recipe Card
     margin-bottom: 4rem;
     font-size: 1rem;
     padding: 0.75rem 3.5rem;
+  }
+}
+
+@media (width < 1376px) {
+  .recipe-card_category {
+    display: none;
+  }
+
+  .recipe-card_nutrition {
+    display: none;
+  }
+
+  .recipe-card_title {
+    bottom: 2rem;
   }
 }
 
@@ -2213,7 +2226,7 @@ footer h4 span {
 
 @media (width < 700px) {
     .strapi-recipe h2 {
-      font-size: 3rem;
+      font-size: 2rem;
     }
     .recipe-container h3 {
       font-size: 1.5rem;

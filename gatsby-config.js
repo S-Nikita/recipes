@@ -18,13 +18,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "G-1SKSBFYK48",
-      },
-    },
-    {
       resolve: `gatsby-plugin-yandex-metrica`,
       options: {
         trackingId: 93569099,
