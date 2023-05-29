@@ -826,7 +826,8 @@ Project
   left: 50%;
   transform: translateX(-50%);
   width: min(var(--max-width), 77.08vw);
-  height: min(35rem, 38.89vw);
+  /* height: min(35rem, 38.89vw); */
+  height: 33.6rem;
   /* margin-left: 11.46vw;
   margin-top: 6rem; */
 }
@@ -858,14 +859,13 @@ Project
 
 @media (320px <= width < 600px) {
   .project {
-    height: 45rem;
+    height: 90rem;
   }
   .project-body {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80vw;
-    height: 45rem;
   }
 }
 
@@ -887,7 +887,7 @@ Project
   display: inline-block;
   overflow: hidden;
   width: 25.9375rem;
-  height: 35rem;
+  height: 33.6rem;
   float: left;
 }
 
@@ -896,7 +896,7 @@ Project
   float: right  ;
   overflow: hidden;
   width: min(35.625rem, 39.58vw);
-  height: min(34,9375rem, 38.82vw);
+  height: 32.9rem;
 
 }
 
@@ -904,6 +904,7 @@ Project
   .picture {
     display: none;
   }
+
   .project-description {
     width: 70vw;;
     display: flex;
@@ -987,21 +988,14 @@ Project
   display: inline-block;
   font-size: min(1.125rem, max(1rem, 1.25vw));
   width: 100%;
-  height: 23rem;
   margin-top: min(2rem, 2.2vw);
   line-height: min(1.75rem, 1.94vw);
 
 }
 
 @media (600px <= width < 800px) {
-  .project-description p {
-    display: inline-block;
-    font-size: 1.5rem;
-    width: 100%;
+  .project-description {
     height: 100%;
-    margin-top: 2rem;
-    line-height: 2rem;
-  
   }
 
   .project-description h2 {
@@ -1017,28 +1011,147 @@ Project
     display: inline-block;
     font-size: 1rem;
     width: 100%;
-    height: 100%;
     margin-top: 2rem;
     line-height: 1.5rem;
-  
   }
 
+  
   .project-description h2 {
     line-height: 3.5rem;
     font-size: 3rem;
     font-weight: 600;
     color: #FFA585;
   }
+
+  .project-description {
+    height: 100%;
+  }
 }
 
-.project-description p br{
-  display: block;
-  content: "";
+.description__container p + p{
+  margin-top: 1rem;
+}
+
+.description_wrapper {
+  height: 29.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-descr--btn {
+  width: 43%;
   margin-top: 1.6rem;
 }
+
+@media (width >= 1300px) {
+  .description_wrapper {
+    height: 30.4rem;
+  }
+
+  .project-description {
+    height: auto;
+  }
+}
+
+@media (1300px > width >= 1000px) {
+  .description_wrapper {
+    height: 30.2rem;
+  }
+
+  .project-description {
+    height: auto;
+  }
+}
+
+@media (width >= 1366px) {
+  .description_wrapper {
+    height: 30.4rem;
+  }
+
+  .project-description {
+    height: auto;
+  }
+}
+
+@media(width < 800px) {
+  .project {
+    height: 68rem;
+  }
+  .project-descr--btn {
+    width: auto;
+  }
+}
+
+@media(width = 1024px) {
+  .project {
+    height: 44rem;
+  }
+}
+
+@media(800px <= width <= 834px) {
+  .project {
+    height: 42rem;
+  }
+}
+
+@media(width = 810px) {
+  .project {
+    height: 42rem;
+  }
+}
+
+@media(width = 768px) {
+  .project {
+    height: 59rem;
+  }
+
+  .project-body {
+    height: 59rem;
+  }
+}
+
+@media(width < 600px) {
+  .project {
+    height: 70rem;
+  }
+
+  .project-body {
+    height: 70rem;
+  }
+}
+
+@media(width < 470px) {
+  .project {
+    height: 78rem;
+  }
+
+  .project-body {
+    height: 78rem;
+  }
+}
+
+@media (375px <= width <= 428px) {
+  .project {
+    height: 75rem;
+  }
+
+  .project-body {
+    height: 75rem;
+  }
+}
+
+@media(width < 360px) {
+  .project {
+    height: 85rem;
+  }
+
+  .project-body {
+    height: 85rem;
+  }
+}
+
+
 
 @media (width < 800px) {
   .project-descr--btn {
@@ -1047,6 +1160,18 @@ Project
     font-size: 1rem;
     padding: 1.125rem 6rem ;
     border-radius: 50px;
+  }
+
+  .project-description p {
+    display: inline-block;
+    font-size: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+    line-height: 2rem;
+  }
+
+  .project-description p + p {
+    margin-top: 1.5rem;
   }
 }
 
@@ -1069,6 +1194,27 @@ Category
   padding: 0;
   height: min(42.5rem, 47.2vw);
   min-height: 25rem;
+}
+
+@media (1201px<= width <= 1368px) {
+  .category {
+    height: 42rem;
+  }
+  
+}
+
+@media (1000px<= width <= 1200px) {
+  .category {
+    height: 37rem;
+  }
+  
+}
+
+@media (768px <= width <= 834px) {
+  .category {
+    height: 28rem;
+  }
+  
 }
 
 .category_container {
@@ -1859,7 +2005,7 @@ footer h4 span {
 .recipe_desc_strapi br {
   display: block;
   /* makes it have a width */
-  content: "";
+  content: " ";
   /* clears default height */
   margin: 0;
   /* change this to whatever height you want it */
@@ -3066,12 +3212,15 @@ button {
   line-height: 2rem;
   font-size: 1.2rem;
   width: 79.56%;
-  margin: 0 11% 8% 11%;
+  margin: 0 11% 1% 11%;
 }
 
-.wrapper-about_project p br{
-  display: block;
-  content: "";
+.wrapper-about_project p:last-child {
+  display: inline-block;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  width: 79.56%;
+  margin: 0 11% 8% 11%;
 }
 
 .about-wrapper span {
@@ -3110,7 +3259,7 @@ button {
     width: 96vw;
   }
 
-  .wrapper-about_project p {
+  .wrapper-about_project p, .wrapper-about_project p:last-child {
     width: 80%;
     font-size: 1.25rem;
   }
@@ -3191,7 +3340,7 @@ button {
     width: 35.5rem;
   }
 
-  .wrapper-about_project p {
+  .wrapper-about_project p, .wrapper-about_project p:last-child {
     font-size: 1.3rem;
     width: 92%;
     margin: 0 5%;
@@ -3268,7 +3417,7 @@ button {
     width: 96vw;
   }
 
-  .wrapper-about_project p {
+  .wrapper-about_project p, .wrapper-about_project p:last-child {
     font-size: 1rem;
     width: 92%;
     margin: 0 5%;
