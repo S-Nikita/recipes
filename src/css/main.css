@@ -2189,6 +2189,7 @@ footer h4 span {
   color: #444;
   margin-left: 3.5rem;
   cursor: pointer;
+  display: block;
 }
 
 .checked {
@@ -2278,6 +2279,7 @@ footer h4 span {
   color: #fff;
   margin-right: 1rem;
   margin-bottom: 3rem;
+  align-self: flex-start;
 }
 
 @media (width < 1440px) {
@@ -2499,11 +2501,11 @@ footer h4 span {
     }
 
     .direction_item p {
-      font-size: 0.8rem;
+      font-size: 1.2rem;
     }
 
     .checkbox_ingridients {
-      font-size: 0.8rem;
+      font-size: 1.2rem;
       margin-left: 2.5rem;
     }
 
