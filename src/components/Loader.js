@@ -51,7 +51,7 @@ function Loader() {
                     ? counter + 1
                     : (clearInterval(count), setCounter(100), reveal())
             );
-        }, 15);
+        }, 0);
     }, []);
 
     const reveal = () => {
@@ -64,7 +64,7 @@ function Loader() {
             width: "100%",
             ease: Expo.easeInOut,
             duration: 1.2,
-            delay: 0,
+            delay: 0.7,
         })
             .to(".hide", { opacity: 0, duration: 0.3 })
             .to(".hide", { display: "none", duration: 0.3 })
@@ -72,7 +72,7 @@ function Loader() {
                 height: "100%",
                 ease: Expo.easeInOut,
                 duration: 0.7,
-                delay: 0,
+                delay: 0.5,
             })
             .to(".hideContainer", { width: "0", display: "none", ease: Power4.easeOut, duration: 1 })
     };
