@@ -1,8 +1,8 @@
 /*
-* Prefixed by:
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 50 version
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
@@ -82,22 +82,27 @@ Global Styles
 }
 
 .panels .panel:nth-child(2) {
+  left: -webkit-calc(var(--panel-width) - 1px);
   left: calc(var(--panel-width) - 1px);
 }
 
 .panels .panel:nth-child(3) {
+  left: -webkit-calc(-webkit-calc(var(--panel-width) * 2) - 2px);
   left: calc(calc(var(--panel-width) * 2) - 2px);
 }
 
 .panels .panel:nth-child(4) {
+  left: -webkit-calc(-webkit-calc(var(--panel-width) * 3) - 4px);
   left: calc(calc(var(--panel-width) * 3) - 4px);
 }
 
 .panels .panel:nth-child(5) {
+  left: -webkit-calc(-webkit-calc(var(--panel-width) * 4) - 5px);
   left: calc(calc(var(--panel-width) * 4) - 5px);
 }
 
 .panels .panel:nth-child(6) {
+  left: -webkit-calc(-webkit-calc(var(--panel-width) * 5) - 6px);
   left: calc(calc(var(--panel-width) * 5) - 6px);
 }
 
@@ -250,12 +255,15 @@ Navbar
   .navbar {
     position: absolute;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     width: min(60rem, 96vw);
@@ -327,12 +335,15 @@ Navbar
   .navbar {
     position: absolute;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     width: min(60rem, 96vw);
@@ -434,7 +445,8 @@ Sidebar
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
 }
 .sidebar-links a:hover {
   background: var(--clr-primary-9);
@@ -454,10 +466,12 @@ Sidebar
 .sidebar-icons {
   margin: 3rem auto;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 11rem;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 2rem;
@@ -772,7 +786,8 @@ Hero
   cursor: pointer;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
@@ -796,11 +811,13 @@ Hero
     cursor: pointer;
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: var(--radius);
+    -webkit-border-radius: var(--radius);
+            border-radius: var(--radius);
     -webkit-transition: var(--transition);
     -o-transition: var(--transition);
     transition: var(--transition);
-    border-radius: 50px;
+    -webkit-border-radius: 50px;
+            border-radius: 50px;
   }
 }
 
@@ -963,13 +980,16 @@ Project
   }
   .project-body {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     width: 70vw;
@@ -983,13 +1003,16 @@ Project
   }
   .project-body {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     width: 80vw;
@@ -1002,13 +1025,16 @@ Project
   }
   .project-body {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     width: 92vw;
@@ -1042,10 +1068,12 @@ Project
   .project-description {
     width: 70vw;;
     display: -webkit-box;;
+    display: -webkit-flex;;
     display: -ms-flexbox;;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     float: none;
@@ -1063,10 +1091,12 @@ Project
   .project-description {
     width: 80vw;;
     display: -webkit-box;;
+    display: -webkit-flex;;
     display: -ms-flexbox;;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     float: none;
@@ -1084,10 +1114,12 @@ Project
   .project-description {
     width: 92vw;;
     display: -webkit-box;;
+    display: -webkit-flex;;
     display: -ms-flexbox;;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     float: none;
@@ -1120,7 +1152,8 @@ Project
   border: solid 5px #ff5364;
   width: 23.5625rem;
   height: 31.875rem;
-  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+          border-radius: 0.5rem;
   padding: 0;
   margin: 0;
   z-index: 1;
@@ -1184,13 +1217,16 @@ Project
 .description_wrapper {
   height: 29.8rem;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
@@ -1312,12 +1348,14 @@ Project
 @media (width < 800px) {
   .project-descr--btn {
     margin-top: 3rem;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+            align-self: center;
     font-size: 1rem;
     padding: 1.125rem 6rem ;
-    border-radius: 50px;
+    -webkit-border-radius: 50px;
+            border-radius: 50px;
   }
 
   .project-description p {
@@ -1336,9 +1374,10 @@ Project
 @media (width < 400px) {
   .project-descr--btn {
     margin-top: 3rem;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+            align-self: center;
     font-size: 1rem;
     padding: 0.75rem 5rem;
   }
@@ -1399,9 +1438,11 @@ Category
 
 .category_images {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: min(4rem, 4.4vw);
@@ -1423,7 +1464,8 @@ Category
   display: inline-block;
   height: min(18.5rem, 20.56vw);
   width: min(18.5rem, 20.56vw);
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 1;
   -webkit-transition: all 0.5s ease-in-out;
@@ -1471,14 +1513,17 @@ Category
   .category_images {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     height: 45rem;
-    -ms-flex-line-pack: justify;
-        align-content: space-between;
+    -webkit-align-content: space-between;
+        -ms-flex-line-pack: justify;
+            align-content: space-between;
   }
 
   .category {
@@ -1582,10 +1627,12 @@ Recipe Card
 
 .recipe-card__cover {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
   height: min(26rem, 28.89vw);
   width: min(17rem, 18.89vw);
   cursor: pointer;
@@ -1635,6 +1682,7 @@ Recipe Card
 .recipe-card__img {
   position: absolute;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
@@ -1683,7 +1731,8 @@ Recipe Card
   font-size: min(1rem, 1.1vw);
   padding: min(0.5rem, 0.56vw) min(0.5rem, 0.56vw);
   border: 1px solid rgba(255, 94, 110, 1);
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
   margin-right: min(0.7rem, 0.78vw);
   background-color: rgba(255, 94, 110, 1);
 }
@@ -1735,10 +1784,12 @@ Recipe Card
   position: absolute;
   bottom: min(1rem, 1.1vw);
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   width: 90%;
@@ -1754,9 +1805,10 @@ Recipe Card
 }
 
 .recipe-card_nutrition svg {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
 }
 
 .recipe-card__cover:hover .recipe-card_nutrition {
@@ -1767,10 +1819,12 @@ Recipe Card
 
 .recipe-card_nutrition--calories {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   margin-right: 0.3rem;
@@ -1788,6 +1842,7 @@ Recipe Card
   display: inline-block;
   padding: 0 0.5rem 0 0.5rem;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
@@ -1795,10 +1850,12 @@ Recipe Card
 
 .recipe-card_nutrition--time {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   border-right: 1px solid #fff;
@@ -1815,21 +1872,25 @@ Recipe Card
   font-weight: 300;
   display: inline-block;
   padding: 0 0.5rem 0 0.5rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
   text-align: center;
 }
 
 .recipe-card_nutrition--difficulty {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 70%;
@@ -1845,7 +1906,8 @@ Recipe Card
     margin-bottom: 4rem;
     font-size: 1rem;
     padding: 0.5rem 2.5rem;
-    border-radius: 50px;
+    -webkit-border-radius: 50px;
+            border-radius: 50px;
   }
 }
 
@@ -1864,16 +1926,20 @@ Recipe Card
 @media (width <= 600px) {
   .recipes-center {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     height: 105rem;
@@ -1881,16 +1947,20 @@ Recipe Card
 
   .recipes-center-not-last {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     height: auto;
@@ -1907,10 +1977,12 @@ Recipe Card
 
   .recipe-card__cover {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+            border-radius: 1rem;
     height: 25rem;
     width: 17rem;
     cursor: pointer;
@@ -1930,6 +2002,7 @@ Recipe Card
   .recipe-card__img {
     position: absolute;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
@@ -1963,7 +2036,8 @@ Recipe Card
     margin-bottom: 4rem;
     font-size: 1rem;
     padding: 1rem 4.5rem;
-    border-radius: 50px;
+    -webkit-border-radius: 50px;
+            border-radius: 50px;
   }
 }
 
@@ -1978,10 +2052,12 @@ Recipe Card
 
   .recipe-card__cover {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+            border-radius: 1rem;
     height: 25rem;
     width: 15rem;
     cursor: pointer;
@@ -2026,14 +2102,17 @@ footer {
 .footer-container {
   position: relative;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin: auto;
   width: min(var(--max-width), 77.08vw);
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   height: inherit;
@@ -2059,9 +2138,11 @@ footer h4 span {
 
 .footer-links {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-width: 8.5rem;
@@ -2082,14 +2163,17 @@ footer h4 span {
   .footer-container {
     position: relative;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     margin: auto;
     width: 96vw;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     height: inherit;
@@ -2113,14 +2197,17 @@ footer h4 span {
   .footer-container {
     position: relative;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     margin: auto;
     width: 96vw;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     height: 4.5625rem;
@@ -2171,9 +2258,11 @@ footer h4 span {
   margin: auto;
   margin-top: 5rem;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
@@ -2196,7 +2285,8 @@ footer h4 span {
   display: block;
   width: min(33rem, 47.57vw);
   height: auto;
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
 }
 
 .recipe-card_nutrition--strapi {
@@ -2204,12 +2294,15 @@ footer h4 span {
   width: min(33rem, 47.57vw);
   margin-top: 1rem;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
+  -webkit-justify-content: start;
       -ms-flex-pack: start;
           justify-content: start;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -2217,10 +2310,12 @@ footer h4 span {
 .recipe-card_nutrition--calories--strapi {
   max-width: 30%;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   border-right: 1px solid #000;
@@ -2233,19 +2328,22 @@ footer h4 span {
   font-weight: 400;
   display: inline-block;
   padding: 0 1rem 0 0.75rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
   text-align: center;
 }
 
 .recipe-card_nutrition--time--strapi {
   max-width: 30%;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   border-right: 1px solid #000;
@@ -2258,19 +2356,22 @@ footer h4 span {
   font-weight: 400;
   display: inline-block;
   padding: 0 1rem 0 0.75rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
   text-align: center;
 }
 
 .recipe-card_nutrition--difficulty--strapi {
   max-width: 100%;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
 }
@@ -2281,9 +2382,10 @@ footer h4 span {
   font-weight: 400;
   display: inline-block;
   padding-right: 1rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
   text-align: center;
 }
 
@@ -2302,13 +2404,16 @@ footer h4 span {
 
 .strapi-recipe_main-description {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 40.625rem;
@@ -2327,19 +2432,23 @@ footer h4 span {
 
 .recipe_desc_strapi {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   width: 40.625rem;
   max-height: 23.2rem;
   height: 23.2rem;
   border: solid 1px #000;
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.8);
   margin-top: 2rem;
   margin-bottom: 2.5rem;
@@ -2380,7 +2489,8 @@ footer h4 span {
   left: 8.2rem;
   width: 3.5rem;
   height: 2rem;
-  border-radius: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
   /* background: #e4e5e6; */
   background: #f1f5f8;
   -webkit-clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
@@ -2421,9 +2531,10 @@ footer h4 span {
 }
 
 .strapi-recipe_nutrition {
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  -webkit-align-self: end;
+      -ms-flex-item-align: end;
+              -ms-grid-row-align: end;
+          align-self: end;
 }
 
 .strapi-recipe_nutrition--table {
@@ -2433,7 +2544,8 @@ footer h4 span {
   width: 40.625rem;
   height: 10.375rem;
   border: solid 1px #444;
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
   background: #fff;
 }
 
@@ -2506,9 +2618,11 @@ footer h4 span {
 /* Ingridients styling */
 .directions-container {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: start;
@@ -2567,7 +2681,8 @@ footer h4 span {
   width: 2rem;
   cursor: pointer;
   background: rgba(255, 83, 100, 0.1);
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
   -webkit-transition: background-color 0.2s ease-in;
   -o-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in;
@@ -2623,6 +2738,7 @@ footer h4 span {
 
 .direction_item {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   font-size: 1.2rem;
@@ -2643,13 +2759,15 @@ footer h4 span {
   display: inline-block;
   min-width: 2rem;
   min-height: 2rem;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   background-color: #ff5364;
   color: #fff;
   margin-right: 1rem;
   margin-bottom: 3rem;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
 }
 
 @media (width < 1440px) {
@@ -2671,9 +2789,11 @@ footer h4 span {
     width: 77.08vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
   }
@@ -2698,6 +2818,7 @@ footer h4 span {
     margin-top: 4rem;
     width: 100%;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
   }
@@ -2707,9 +2828,10 @@ footer h4 span {
   }
 
   .recipe_desc_strapi {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+            align-self: center;
     max-height: none;
   }
 
@@ -2719,10 +2841,12 @@ footer h4 span {
   }
 
   .strapi-recipe_nutrition {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+            align-self: center;
     -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
         -ms-flex-order: -1;
             order: -1;
     margin-bottom: 4rem;
@@ -2732,9 +2856,11 @@ footer h4 span {
     width: min(40.625rem, 77.08vw);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
   }
@@ -2798,24 +2924,28 @@ footer h4 span {
 
     .recipe-card_nutrition--calories--strapi {
       -webkit-box-align: center;
+      -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
     }
 
     .recipe-card_nutrition--time--strapi {
       -webkit-box-align: center;
+      -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
     }
 
     .recipe-card_nutrition--difficulty--strapi {
       -webkit-box-align: center;
+      -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
     }
 
     .strapi-recipe_nutrition--table {
       display: -webkit-box;
+      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       width: 75.42vw;
@@ -2824,9 +2954,11 @@ footer h4 span {
       height: auto;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column;
       -webkit-box-align: center;
+      -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
     }
@@ -2898,10 +3030,12 @@ footer h4 span {
     }
   
     .direction_item {
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-      -ms-flex-line-pack: center;
-          align-content: center;
+      -webkit-flex-wrap: nowrap;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap;
+      -webkit-align-content: center;
+          -ms-flex-line-pack: center;
+              align-content: center;
       margin-left: .5rem
     }
 
@@ -2959,6 +3093,7 @@ footer h4 span {
 }
 .recipes_navigation {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -ms-grid-column: 2;
@@ -2986,6 +3121,7 @@ footer h4 span {
   .recipes_navigation {
       -webkit-box-orient: vertical;
       -webkit-box-direction: reverse;
+      -webkit-flex-direction: column-reverse;
           -ms-flex-direction: column-reverse;
               flex-direction: column-reverse;
       height: 16.5rem;
@@ -2999,7 +3135,8 @@ footer h4 span {
   margin-right: 5.2rem;
   /* background: rgba(83, 186, 255, 0.2); */
   /* background: rgba(255, 83, 100, 0.2); */
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
 }
 
 @media (width < 1440px) {
@@ -3028,22 +3165,26 @@ footer h4 span {
 
 .dd-header {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 2.5rem;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   cursor: pointer;
   /* border: 1px solid rgba(83, 235, 238, 0.5); */
   border: 1px solid #fff;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
   /* background: rgba(83, 235, 238, 0.2); */
   background: RGBA(255, 165, 133, 1);
 }
 
 .dd-header__title {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -3051,15 +3192,17 @@ footer h4 span {
 .dd-header__title--bold {
   color: #fff;
   display: block;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
   margin-left: 1rem;
   letter-spacing: 1px;
 }
 
 .dd-header__action {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -3072,9 +3215,10 @@ footer h4 span {
 .recipes_svg {
   width: 1rem;
   height: 1rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
   margin-right: 1rem;
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
@@ -3092,7 +3236,8 @@ footer h4 span {
 
 .dd-list {
   overflow: hidden;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
   border-bottom: 0;
   border-top: 0;
   border-right: solid 1px #fff;
@@ -3177,7 +3322,8 @@ footer h4 span {
   width: 39.4rem;
   height: 2.5rem;
   background-color: #fff;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
 }
 
 @media (width <= 600px) {
@@ -3202,7 +3348,8 @@ button {
   width: 100%;
   background: #fff;
   padding: 0 1rem;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
   /* border: solid 1px rgba(83, 235, 238, 0.5); */
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -3224,7 +3371,8 @@ button {
   /* background: rgba(83, 235, 238, 1); */
   background: rgba(255, 83, 100, 1);
   color: #fff;
-  border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+          border-radius: 0 5px 5px 0;
   /* border: solid 1px rgba(83, 235, 238, 0.5); */
   cursor: pointer;
 }
@@ -3235,11 +3383,34 @@ button {
   fill: #fff;
 }
 
-.search_form input:not(:placeholder-shown) {
+.search_form input:not(:-moz-placeholder-shown) {
   border-radius: 5px 0 0 5px;
   border-right: 0;
   margin-left: -15%;
   width: 85%;
+}
+
+.search_form input:not(:-ms-input-placeholder) {
+  border-radius: 5px 0 0 5px;
+  border-right: 0;
+  margin-left: -15%;
+  width: 85%;
+}
+
+.search_form input:not(:placeholder-shown) {
+  -webkit-border-radius: 5px 0 0 5px;
+          border-radius: 5px 0 0 5px;
+  border-right: 0;
+  margin-left: -15%;
+  width: 85%;
+}
+
+.search_form input:not(:-moz-placeholder-shown)+button {
+  display: block;
+}
+
+.search_form input:not(:-ms-input-placeholder)+button {
+  display: block;
 }
 
 .search_form input:not(:placeholder-shown)+button {
@@ -3278,17 +3449,21 @@ button {
 
 .pagination {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 3rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: end;
+  -webkit-align-items: flex-end;
       -ms-flex-align: end;
           align-items: flex-end;
   margin: 5rem 0 -5rem 0;
@@ -3371,16 +3546,20 @@ button {
 
 .wrapper {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   margin: auto;
 }
 
@@ -3399,7 +3578,8 @@ button {
   padding-left: 1rem;
   background-color: rgba(238, 238, 238, 0.5);
   border: 1px solid #333;
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
 }
 
 .input-block:focus-within {
@@ -3568,7 +3748,8 @@ button {
   .btn-form {
     font-size: 1rem;
     height: 3.5rem;
-    border-radius: 50rem;
+    -webkit-border-radius: 50rem;
+            border-radius: 50rem;
     width: 96vw;
     display: block;
     margin-top: 2.75rem;
@@ -3643,7 +3824,8 @@ button {
 
 .about_author-img img {
   /* border: 5px solid rgba(255, 83, 100, 0.8); */
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
 }
 
 .wrapper-about_author {
@@ -3657,7 +3839,8 @@ button {
   background: #fff;
   /* background: rgb(248, 248, 248); */
   /* border: 2.5px solid rgba(255, 83, 98, 0.75); */
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
 }
 
 .wrapper-about_author p {
@@ -3673,7 +3856,8 @@ button {
   margin-top: 5rem;
   background: rgb(255, 255, 255);
   /* background: rgba(83, 186, 255, 0.1); */
-  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+          border-radius: var(--radius);
   width: min(72rem, 80vw);
   /* height: 29.5rem; */
 }
@@ -3751,16 +3935,20 @@ button {
 
   .about-wrapper {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     gap: 4rem;
     width: 77.08vw;
     height: auto;
@@ -3774,17 +3962,21 @@ button {
 
   .about_author-wrapper {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     gap: 2rem;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
     width: 77.08vw;
     height: auto;
     position: relative;
@@ -3804,16 +3996,20 @@ button {
 
   .wrapper-about_author {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
     position: static;
     height: auto;
     width: 35.5rem;
@@ -3860,16 +4056,20 @@ button {
 
   .about-wrapper {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     gap: 2rem;
     width: 96vw;
     height: auto;
@@ -3884,17 +4084,21 @@ button {
 
   .about_author-wrapper {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     gap: 2rem;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
     width: 96vw;
     height: auto;
     position: relative;
@@ -4028,7 +4232,8 @@ button {
     /* margin-top: 1rem; */
     font-size: 1rem;
     padding: 0.5rem 3rem ;
-    border-radius: 50rem;
+    -webkit-border-radius: 50rem;
+            border-radius: 50rem;
   }
 }
 
@@ -4037,17 +4242,21 @@ button {
     width: 96vw;
     height: auto;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
   }
 
   .description h1 {
@@ -4085,7 +4294,8 @@ button {
     margin-top: 1rem;
     font-size: 1rem;
     padding: 0.5rem 3rem ;
-    border-radius: 50rem;
+    -webkit-border-radius: 50rem;
+            border-radius: 50rem;
   }
 }
 
